@@ -20,4 +20,7 @@ e-Travel est une plateforme web permettant à l'utilisateur de rechercher des bi
 ### Schéma Relationnel : 
 ![image](https://user-images.githubusercontent.com/72379955/227935604-2afdfecf-4118-4f82-b4c1-a26eaf7886c3.png)
 
+### Technos : 
+NextJs et NestJS
+
 
