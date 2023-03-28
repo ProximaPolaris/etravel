@@ -426,7 +426,7 @@ CREATE TABLE `users` (
   `countries_code` char(2) NOT NULL,
   `city` varchar(50) NOT NULL,
   `zipcode` varchar(10) NOT NULL,
-  `adress` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `key_api` varchar(100) NOT NULL,
