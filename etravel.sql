@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 27 mars 2023 à 12:34
+-- Généré le : mar. 04 avr. 2023 à 10:45
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `test`
+-- Base de données : `etravel`
 --
 
 -- --------------------------------------------------------
@@ -40,10 +40,10 @@ CREATE TABLE `activities` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `calendriers`
+-- Structure de la table `calendars`
 --
 
-CREATE TABLE `calendriers` (
+CREATE TABLE `calendars` (
   `id` int(11) NOT NULL,
   `idTravel` int(11) NOT NULL,
   `date` date NOT NULL,
@@ -449,9 +449,9 @@ ALTER TABLE `activities`
   ADD KEY `travel_id` (`travel_id`);
 
 --
--- Index pour la table `calendriers`
+-- Index pour la table `calendars`
 --
-ALTER TABLE `calendriers`
+ALTER TABLE `calendars`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idTravel` (`idTravel`),
   ADD KEY `idActivityTravel` (`idActivityTravel`);
@@ -516,9 +516,9 @@ ALTER TABLE `activities`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `calendriers`
+-- AUTO_INCREMENT pour la table `calendars`
 --
-ALTER TABLE `calendriers`
+ALTER TABLE `calendars`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -569,11 +569,11 @@ ALTER TABLE `activities`
   ADD CONSTRAINT `activities_ibfk_2` FOREIGN KEY (`travel_id`) REFERENCES `travels` (`id`);
 
 --
--- Contraintes pour la table `calendriers`
+-- Contraintes pour la table `calendars`
 --
-ALTER TABLE `calendriers`
-  ADD CONSTRAINT `calendriers_ibfk_1` FOREIGN KEY (`idTravel`) REFERENCES `travels` (`id`),
-  ADD CONSTRAINT `calendriers_ibfk_2` FOREIGN KEY (`idActivityTravel`) REFERENCES `type_activities` (`id`);
+ALTER TABLE `calendars`
+  ADD CONSTRAINT `calendars_ibfk_1` FOREIGN KEY (`idTravel`) REFERENCES `travels` (`id`),
+  ADD CONSTRAINT `calendars_ibfk_2` FOREIGN KEY (`idActivityTravel`) REFERENCES `type_activities` (`id`);
 
 --
 -- Contraintes pour la table `countries`
