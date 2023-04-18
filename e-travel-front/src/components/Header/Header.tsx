@@ -8,10 +8,21 @@ const Header = () => {
   return (
     <div className={styles.div}>
       <div>
-        <Image className={styles.logo} src={logo} alt="Logo" />
+        <a href="/">
+          <Image className={styles.logo} src={logo} alt="Logo" />
+        </a>
       </div>
       <div className={styles.text}>
-        <h2>E-Travel</h2>
+        <h1>
+          <span>E</span>
+          <span>-</span>
+          <span>T</span>
+          <span>r</span>
+          <span>a</span>
+          <span>v</span>
+          <span>e</span>
+          <span>l</span>
+        </h1>
       </div>
       <div className={styles.action_button}>
         <a href="/" className={styles.signIn} id="sign-in-button">
