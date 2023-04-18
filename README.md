@@ -18,7 +18,7 @@ e-Travel est une plateforme web permettant à l'utilisateur de rechercher des bi
 [Suivez notre avancée sur Trello](https://trello.com/b/RlX7NGAe/fil-rouge-projet)
 
 ### Schéma Relationnel : 
-![image](https://user-images.githubusercontent.com/72379955/229750673-365ad9d6-89c4-4211-97a1-d32c22c57b23.png)
+![image](https://user-images.githubusercontent.com/72379955/232722082-04d17caa-3914-4391-a4d8-3f334a577799.png)
 
 ### Technos : 
 NextJs et NestJS
