@@ -6,7 +6,7 @@ import logo from '../../img/logo.png';
 
 const Header = () => {
   return (
-    <div className={styles.div}>
+    <div className={styles.container}>
       <div>
         <a href="/">
           <Image className={styles.logo} src={logo} alt="Logo" />
@@ -25,10 +25,10 @@ const Header = () => {
         </h1>
       </div>
       <div className={styles.action_button}>
-        <a href="/" className={styles.signIn} id="sign-in-button">
-          <span>Sign In</span>
-          <i></i>
-        </a>
+        <Link href="/login" className={styles.signIn} id="sign-in-button">
+            <span>Sign In</span>
+            <i></i>
+        </Link>
         <a href="/" className={styles.signUp} id="sign-up-button">
           <span>Sign Up</span>
           <i></i>
