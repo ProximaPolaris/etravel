@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  nextjs-app:
+    build: ./etravel-front
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    volumes:
+      - ./etravel-front:/app
+
+  nestjs-server:
+    build: ./etravel-back
+    restart: unless-stopped
+    ports:
+      - 3001:3001
+    volumes:
+      - ./etravel-back:/app
+
+  database:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    ports:
+      - 3306:3306
+    volumes:
+      - database_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: etravel
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: database
+      PMA_USER: root
+      PMA_PASSWORD: root
+      PMA_ARBITRARY: 0
+  
+volumes:
+  database_data:
+
+
+
+      
