@@ -45,7 +45,9 @@ const LoginPage = () => {
                     </div>
                 </div>
                 <div className={styles.action_button}>
-                    <button>Back</button>
+                    <a href="/">
+                        <button>Back</button>
+                    </a>
                 </div>
             </div>
             <div className={styles.image} />
