@@ -24,6 +24,7 @@
         }
     }
     .card {
+        box-shadow: 5px 5px 15px 5px rgba($color: #000000, $alpha: 0.4);
         font-family: 'Courier New', Courier, monospace;
         background: #1c1c1c;
         display: flex;
