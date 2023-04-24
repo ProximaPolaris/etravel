@@ -3,7 +3,7 @@ FRONT_DIR = etravel-front
 BACK_DIR = etravel-back
 
 install:
-	cd $(FRONT_DIR) && npm install
+	cd $(FRONT_DIR) && npm install && npm i sass
 	cd $(BACK_DIR) && npm install
 
 build:
