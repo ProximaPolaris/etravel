@@ -83,17 +83,16 @@
   .text {
     position: absolute;
     left: 50%;
-    font-size: 10px;
-    transform: translateX(-50%) scale(0.8);
+    font-size: 20px;
+    transform: translateX(-50%) scale(0.6);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: 'bad Script', cursive;
     display: flex;
     justify-content: center;
     align-items: center;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1200px) {
       left: 25%;
-      font-size: 20px;
       transform: translateX(-50%) scale(1);
     }
     h1 {
