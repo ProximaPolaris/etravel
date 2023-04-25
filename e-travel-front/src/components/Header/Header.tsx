@@ -15,7 +15,7 @@ const Header = () => {
         </a>
       </div>
       {
-        router.pathname === '/' && 
+        (router.pathname === '/' || router.pathname === '/signup')&& 
         <div className={styles.textIndex}>
           <h1>
             <span>E</span>
@@ -46,16 +46,19 @@ const Header = () => {
       }
       <div className={styles.action_button}>
         {
-          router.pathname === '/' &&
+          (router.pathname === '/' || router.pathname === '/signup') &&
           <Link href="/login" className={styles.signIn} id="sign-in-button">
             <span>Sign In</span>
             <i></i>
           </Link>
         }
-        <a href="/" className={styles.signUp} id="sign-up-button">
-          <span>Sign Up</span>
-          <i></i>
-        </a>
+        {
+          (router.pathname === '/' || router.pathname === '/login') &&
+          <Link href="/signup" className={styles.signUp} id="sign-up-button">
+            <span>Sign Up</span>
+            <i></i>
+          </Link>
+        }
       </div>
     </div>
   );
