@@ -20,13 +20,13 @@ down:
 	$(DOCKER_COMPOSE) down
 
 kiki:
+	@read -p "Enter commit message: " message; \
 	git status; \
 	read -p "Are you sure you want to commit these changes (y/n)? " answer; \
 	if [ "$$answer" != "y" ]; then \
 	    echo "Commit aborted"; \
 	    exit 1; \
 	fi; \
-	@read -p "Enter commit message: " message; \
 	git add .; \
 	git commit -m "feat: $${message}"; \
 	git push;
