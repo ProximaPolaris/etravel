@@ -9,10 +9,13 @@ install:
 build:
 	$(DOCKER_COMPOSE) build
 
-start:
+up:
 	$(DOCKER_COMPOSE) up -d
+
+run-metabase:
+	@docker run -d -p 6969:3000 --name metabase metabase/metabase
 
 down:
 	$(DOCKER_COMPOSE) down
 
-all: install build start
+all: install build up
