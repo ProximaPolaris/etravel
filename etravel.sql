@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 27 mars 2023 à 12:34
+-- Généré le : mar. 18 avr. 2023 à 10:41
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `test`
+-- Base de données : `etravel`
 --
 
 -- --------------------------------------------------------
@@ -35,23 +35,23 @@ CREATE TABLE `activities` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Activities';
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `calendriers`
+-- Structure de la table `calendars`
 --
 
-CREATE TABLE `calendriers` (
+CREATE TABLE `calendars` (
   `id` int(11) NOT NULL,
-  `idTravel` int(11) NOT NULL,
+  `travel_id` int(11) NOT NULL,
   `date` date NOT NULL,
-  `idActivityTravel` int(11) NOT NULL,
+  `activity_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Calendars';
 
 -- --------------------------------------------------------
 
@@ -61,8 +61,8 @@ CREATE TABLE `calendriers` (
 
 CREATE TABLE `continents` (
   `code` char(2) NOT NULL COMMENT 'Continent code',
-  `name` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `name` varchar(255) NOT NULL COMMENT 'Continent name'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Continents';
 
 --
 -- Déchargement des données de la table `continents`
@@ -89,15 +89,15 @@ CREATE TABLE `countries` (
   `name` varchar(255) NOT NULL COMMENT 'English country name',
   `full_name` varchar(255) NOT NULL COMMENT 'Full English country name',
   `iso3` char(3) NOT NULL COMMENT 'Three-letter country code (ISO 3166-1 alpha-3)',
-  `number` char(3) NOT NULL COMMENT 'Three-digit country number (ISO 3166-1 numeric)',
-  `continent_code` char(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `numeric_code` char(3) NOT NULL COMMENT 'Three-digit country number (ISO 3166-1 numeric)',
+  `continent_code` char(2) NOT NULL COMMENT 'Continent code'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Countries';
 
 --
 -- Déchargement des données de la table `countries`
 --
 
-INSERT INTO `countries` (`id`, `code`, `name`, `full_name`, `iso3`, `number`, `continent_code`) VALUES
+INSERT INTO `countries` (`id`, `code`, `name`, `full_name`, `iso3`, `numeric_code`, `continent_code`) VALUES
 (1, 'AF', 'Afghanistan', 'Islamic Republic of Afghanistan', 'AFG', '004', 'AS'),
 (2, 'AX', 'Åland Islands', 'Åland Islands', 'ALA', '248', 'EU'),
 (3, 'AL', 'Albania', 'Republic of Albania', 'ALB', '008', 'EU'),
@@ -356,15 +356,15 @@ INSERT INTO `countries` (`id`, `code`, `name`, `full_name`, `iso3`, `number`, `c
 
 CREATE TABLE `destinations` (
   `id` int(11) NOT NULL,
-  `idTravel` int(11) NOT NULL,
-  `idCountry` int(11) NOT NULL,
+  `travel_id` int(11) NOT NULL,
+  `country_id` int(11) NOT NULL,
   `city` varchar(50) NOT NULL,
-  `beginDate` date NOT NULL,
-  `endDate` date NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Destinations';
 
 -- --------------------------------------------------------
 
@@ -374,12 +374,12 @@ CREATE TABLE `destinations` (
 
 CREATE TABLE `lodgings` (
   `id` int(11) NOT NULL,
-  `idTravel` int(11) NOT NULL,
+  `travel_id` int(11) NOT NULL,
   `address` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Lodgings';
 
 -- --------------------------------------------------------
 
@@ -389,13 +389,13 @@ CREATE TABLE `lodgings` (
 
 CREATE TABLE `travels` (
   `id` int(11) NOT NULL,
-  `idUser` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Travels';
 
 -- --------------------------------------------------------
 
@@ -409,7 +409,7 @@ CREATE TABLE `type_activities` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Type of Activities';
 
 -- --------------------------------------------------------
 
@@ -420,21 +420,21 @@ CREATE TABLE `type_activities` (
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `subname` varchar(50) NOT NULL,
-  `sexe` varchar(10) NOT NULL,
+  `surname` varchar(50) NOT NULL,
+  `gender` enum('Male','Female','Other') NOT NULL,
   `birthdate` date NOT NULL,
-  `countries_code` char(2) NOT NULL,
+  `country_id` int(11) NOT NULL,
   `city` varchar(50) NOT NULL,
-  `zipcode` varchar(10) NOT NULL,
-  `adress` varchar(100) NOT NULL,
+  `zip_code` varchar(10) NOT NULL,
+  `address` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `key_api` varchar(100) NOT NULL,
-  `role` varchar(50) NOT NULL,
+  `role` enum('User','Admin','Super Admin') NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Users';
 
 --
 -- Index pour les tables déchargées
@@ -449,12 +449,12 @@ ALTER TABLE `activities`
   ADD KEY `travel_id` (`travel_id`);
 
 --
--- Index pour la table `calendriers`
+-- Index pour la table `calendars`
 --
-ALTER TABLE `calendriers`
+ALTER TABLE `calendars`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idTravel` (`idTravel`),
-  ADD KEY `idActivityTravel` (`idActivityTravel`);
+  ADD KEY `travel_id` (`travel_id`),
+  ADD KEY `activity_id` (`activity_id`);
 
 --
 -- Index pour la table `continents`
@@ -467,7 +467,6 @@ ALTER TABLE `continents`
 --
 ALTER TABLE `countries`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `code` (`code`),
   ADD KEY `continent_code` (`continent_code`);
 
 --
@@ -475,22 +474,22 @@ ALTER TABLE `countries`
 --
 ALTER TABLE `destinations`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idTravel` (`idTravel`),
-  ADD KEY `idCountry` (`idCountry`);
+  ADD KEY `travel_id` (`travel_id`),
+  ADD KEY `country_id` (`country_id`);
 
 --
 -- Index pour la table `lodgings`
 --
 ALTER TABLE `lodgings`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idTravel` (`idTravel`);
+  ADD KEY `travel_id` (`travel_id`);
 
 --
 -- Index pour la table `travels`
 --
 ALTER TABLE `travels`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idUser` (`idUser`);
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Index pour la table `type_activities`
@@ -503,7 +502,7 @@ ALTER TABLE `type_activities`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `countries_code` (`countries_code`);
+  ADD KEY `country_id` (`country_id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -516,9 +515,9 @@ ALTER TABLE `activities`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `calendriers`
+-- AUTO_INCREMENT pour la table `calendars`
 --
-ALTER TABLE `calendriers`
+ALTER TABLE `calendars`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -566,45 +565,46 @@ ALTER TABLE `users`
 --
 ALTER TABLE `activities`
   ADD CONSTRAINT `activities_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `type_activities` (`id`),
-  ADD CONSTRAINT `activities_ibfk_2` FOREIGN KEY (`travel_id`) REFERENCES `travels` (`id`);
+  ADD CONSTRAINT `activities_ibfk_2` FOREIGN KEY (`travel_id`) REFERENCES `travels` (`id`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `calendriers`
+-- Contraintes pour la table `calendars`
 --
-ALTER TABLE `calendriers`
-  ADD CONSTRAINT `calendriers_ibfk_1` FOREIGN KEY (`idTravel`) REFERENCES `travels` (`id`),
-  ADD CONSTRAINT `calendriers_ibfk_2` FOREIGN KEY (`idActivityTravel`) REFERENCES `type_activities` (`id`);
+ALTER TABLE `calendars`
+  ADD CONSTRAINT `calendars_ibfk_1` FOREIGN KEY (`travel_id`) REFERENCES `travels` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `calendars_ibfk_2` FOREIGN KEY (`activity_id`) REFERENCES `activities` (`id`);
 
 --
 -- Contraintes pour la table `countries`
 --
 ALTER TABLE `countries`
-  ADD CONSTRAINT `fk_countries_continents` FOREIGN KEY (`continent_code`) REFERENCES `continents` (`code`);
+  ADD CONSTRAINT `countries_ibfk_1` FOREIGN KEY (`continent_code`) REFERENCES `continents` (`code`),
+  ADD CONSTRAINT `countries_ibfk_2` FOREIGN KEY (`continent_code`) REFERENCES `continents` (`code`);
 
 --
 -- Contraintes pour la table `destinations`
 --
 ALTER TABLE `destinations`
-  ADD CONSTRAINT `destinations_ibfk_1` FOREIGN KEY (`idTravel`) REFERENCES `travels` (`id`),
-  ADD CONSTRAINT `destinations_ibfk_2` FOREIGN KEY (`idCountry`) REFERENCES `countries` (`id`);
+  ADD CONSTRAINT `destinations_ibfk_1` FOREIGN KEY (`travel_id`) REFERENCES `travels` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `destinations_ibfk_2` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`);
 
 --
 -- Contraintes pour la table `lodgings`
 --
 ALTER TABLE `lodgings`
-  ADD CONSTRAINT `lodgings_ibfk_1` FOREIGN KEY (`idTravel`) REFERENCES `travels` (`id`);
+  ADD CONSTRAINT `lodgings_ibfk_1` FOREIGN KEY (`travel_id`) REFERENCES `travels` (`id`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `travels`
 --
 ALTER TABLE `travels`
-  ADD CONSTRAINT `travels_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `travels_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Contraintes pour la table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`countries_code`) REFERENCES `countries` (`code`);
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
