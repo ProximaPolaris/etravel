@@ -90,7 +90,9 @@ const SignupPage = () => {
                             </div>
                             <div className={styles.form_button}>
                                 {step === 1 ? (
-                                    <button onClick={handleNext}>Suivant</button>
+                                    <div>
+                                        <button onClick={handleNext}>Suivant</button>
+                                    </div>
                                 ) : (
                                     <div>
                                         <button onClick={handlePrev}>Précedent</button>

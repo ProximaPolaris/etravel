@@ -26,7 +26,7 @@
         .card {
             box-shadow: 5px 5px 15px 5px rgba($color: #000000, $alpha: 0.4);
             font-family: 'Courier New', Courier, monospace;
-            background: #1c1c1c;
+            background: #182B72;
             display: flex;
             justify-content: center;
             position: relative;
@@ -44,7 +44,7 @@
                 width: 680px;
                 height: 520px;
                 background: linear-gradient(0deg, transparent, 
-                #a5623b, #a5623b);
+                #fff, #fff);
                 transform-origin: bottom right;
                 animation: animate 6s linear infinite;
             }
@@ -56,7 +56,7 @@
                 width: 680px;
                 height: 520px;
                 background: linear-gradient(0deg, transparent, 
-                #a5623b, #a5623b);
+                #fff, #fff);
                 transform-origin: bottom right;
                 animation: animate 6s linear infinite;
                 animation-delay: -3s;
@@ -84,11 +84,12 @@
                     justify-content: center;
                     h2 {
                         font-size: 30px;
-                        font-weight: 500;
+                        font-weight: 900;
                         text-align: center;
                         letter-spacing: 0.1em;
                         padding: 10px 20px;
-                        border-bottom: 1px solid white;
+                        color: #fff;
+                        border-bottom: 2px solid #fff;
                         width: 40%;
                     }
                 }
@@ -169,6 +170,34 @@
                     display: flex;
                     flex-direction: row;
                     justify-content: flex-end;
+                    div button {
+                        padding: 7px 12px;
+                        margin: 0px 10px;
+                        background: transparent;
+                        cursor: pointer;
+                        outline: none;
+                        border: none;
+                        border: 1px solid #fff;
+                        border-radius: 3px;
+                        transition: 0.3s;
+                        &:hover {
+                            background: #202124;
+                        }
+                    }
+                    div input {
+                        padding: 7px 12px;
+                        margin: 0px;
+                        background: transparent;
+                        cursor: pointer;
+                        outline: none;
+                        border: none;
+                        border: 1px solid #fff;
+                        border-radius: 3px;
+                        transition: 0.3s;
+                        &:hover {
+                            background-color: #182B72;
+                        }
+                    }
                 }
             }
         }
