@@ -1,0 +1,228 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(45deg, #0F1B48, #4d7898, #a5623b);
+    background-size: 250% 250%;
+    animation: color 12s ease-in-out infinite;
+    @keyframes color {
+        0% {
+            background-position: 0 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0 50%;
+        }
+    }
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        .card {
+            box-shadow: 5px 5px 15px 5px rgba($color: #000000, $alpha: 0.4);
+            font-family: 'Courier New', Courier, monospace;
+            background: #182B72;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            width: 680px;
+            height: 520px;
+            margin:auto;
+            padding: 10px 30px 10px 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            &::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 680px;
+                height: 520px;
+                background: linear-gradient(0deg, transparent, 
+                #fff, #fff);
+                transform-origin: bottom right;
+                animation: animate 6s linear infinite;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 680px;
+                height: 520px;
+                background: linear-gradient(0deg, transparent, 
+                #fff, #fff);
+                transform-origin: bottom right;
+                animation: animate 6s linear infinite;
+                animation-delay: -3s;
+            }
+            @keyframes animate {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            .form {
+                font-family: 'Courier New', Courier, monospace;
+                position: absolute;
+                inset: 2px;
+                border-radius: 8px;
+                background: #28292d;
+                z-index: 20;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .form_title {
+                    display: flex;
+                    justify-content: center;
+                    h2 {
+                        font-size: 30px;
+                        font-weight: 900;
+                        text-align: center;
+                        letter-spacing: 0.1em;
+                        padding: 10px 20px;
+                        color: #fff;
+                        border-bottom: 2px solid #fff;
+                        width: 40%;
+                    }
+                }
+                .form_content {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 10px 0px;
+                    padding: 0px 15px;
+                    form {
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                        .form_left div {
+                            display: flex;
+                            flex-direction: column;
+                            flex-grow: 1;
+                            padding: 0px 10px;
+                            label {
+                                font-size: 18px;
+                                font-weight: 500;
+                                margin-top: 20px;
+                            }
+                            input[type="text"],
+                            input[type="date"],
+                            select {
+                                padding: 10px;
+                                border: none;
+                                border-radius: 5px;
+                                margin-bottom: 20px;
+                                width: 250px;
+                            }
+                        }
+                        .form_right div {
+                            display: flex;
+                            flex-direction: column;
+                            flex-grow: 1;
+                            padding: 0px 10px;
+                            
+                            label {
+                                font-size: 18px;
+                                font-weight: 500;
+                                margin-top: 20px;
+                            }
+                              
+                            input[type="email"],
+                            input[type="password"] {
+                                padding: 10px;
+                                border: none;
+                                border-radius: 5px;
+                                margin-bottom: 20px;
+                                width: 250px;
+                            }
+                        }
+                        .form_all div {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            padding: 0px 10px;
+                            
+                            label {
+                                font-size: 18px;
+                                font-weight: 500;
+                                margin-top: 20px;
+                            }
+                              
+                            input[type="text"] {
+                                padding: 10px;
+                                border: none;
+                                border-radius: 5px;
+                                margin-bottom: 20px;
+                                width: 450px;
+                            }
+                        }
+                    }
+                }           
+                .form_button {
+                    padding: 10px 20px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    div button {
+                        padding: 7px 12px;
+                        margin: 0px 10px;
+                        background: transparent;
+                        cursor: pointer;
+                        outline: none;
+                        border: none;
+                        border: 1px solid #fff;
+                        border-radius: 3px;
+                        transition: 0.3s;
+                        &:hover {
+                            background: #202124;
+                        }
+                    }
+                    div input {
+                        padding: 7px 12px;
+                        margin: 0px;
+                        background: transparent;
+                        cursor: pointer;
+                        outline: none;
+                        border: none;
+                        border: 1px solid #fff;
+                        border-radius: 3px;
+                        transition: 0.3s;
+                        &:hover {
+                            background-color: #182B72;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .action_button {
+        margin-bottom: 50px;
+        padding-left: 40px;
+        a button {
+            background-color: transparent;
+            font-family: 'Courier New', Courier, monospace;
+            outline: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 400;
+            transition: .4s;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            border-radius: 10%;
+            color: #1c1c1c;
+            &:hover {
+                border: 1px solid #1c1c1c;
+                border-radius: 10%;
+                background: #1c1c1c;
+                color: #fff;
+            }
+        }
+    }
+}
