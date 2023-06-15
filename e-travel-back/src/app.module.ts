@@ -2,7 +2,10 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersModule } from './users/users.module';
+import { UsersModule } from './api/users/users.module';
+import { User } from './api/users/entities/user.entity';
+import { CountriesModule } from './api/countries/countries.module';
+import { Country } from './api/countries/entities/country.entity';
 
 @Module({
   imports: [
@@ -13,10 +16,11 @@ import { UsersModule } from './users/users.module';
       username: 'root',
       password: 'root',
       database: 'e-travel',
-      autoLoadEntities: true,
-      synchronize: true, // Synchronise automatiquement la structure de la base de données avec les entités (NE PAS UTILISER EN PRODUCTION)
+      entities: [User, Country],
+      synchronize: true,
     }),
     UsersModule,
+    CountriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
