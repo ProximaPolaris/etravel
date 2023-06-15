@@ -1,26 +1,34 @@
 import { Injectable } from '@nestjs/common';
 import { CreateCountryDto } from './dto/create-country.dto';
 import { UpdateCountryDto } from './dto/update-country.dto';
+import { Country } from './entities/country.entity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class CountriesService {
+  constructor(
+    @InjectRepository(Country)
+    private countryRepository: Repository<Country>,
+  ) {}
+
   create(createCountryDto: CreateCountryDto) {
-    return 'This action adds a new country';
+    return this.countryRepository.create(createCountryDto);
   }
 
   findAll() {
-    return `This action returns all countries`;
+    return this.countryRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} country`;
+    return this.countryRepository.findOneBy({ id });
   }
 
   update(id: number, updateCountryDto: UpdateCountryDto) {
-    return `This action updates a #${id} country`;
+    return this.countryRepository.update(id, updateCountryDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} country`;
+    return this.countryRepository.delete({ id });
   }
 }
