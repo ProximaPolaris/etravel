@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { ContinentsService } from './continents.service';
 import { CreateContinentDto } from './dto/create-continent.dto';
 import { UpdateContinentDto } from './dto/update-continent.dto';
@@ -17,18 +25,21 @@ export class ContinentsController {
     return this.continentsService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.continentsService.findOne(+id);
+  @Get(':code')
+  findOne(@Param('code') code: string) {
+    return this.continentsService.findOne(code);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateContinentDto: UpdateContinentDto) {
-    return this.continentsService.update(+id, updateContinentDto);
+  @Patch(':code')
+  update(
+    @Param('code') code: string,
+    @Body() updateContinentDto: UpdateContinentDto,
+  ) {
+    return this.continentsService.update(code, updateContinentDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.continentsService.remove(+id);
+  @Delete(':code')
+  remove(@Param('code') code: string) {
+    return this.continentsService.remove(code);
   }
 }
