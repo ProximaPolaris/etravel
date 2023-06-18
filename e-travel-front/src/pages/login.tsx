@@ -38,8 +38,8 @@ const LoginPage = () => {
                             <i></i>
                         </div>
                         <div className={styles.linksCard}>
-                            <a href="#">Forgot Password</a>
-                            <a href="#">Sign Up</a>
+                            <a href="forgot">Forgot Password</a>
+                            <a href="signup">Sign Up</a>
                         </div>
                         <input type="submit" className={styles.buttonCard} />
                     </div>

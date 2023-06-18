@@ -5,7 +5,7 @@ const IndexPage = () => {
   return (
     <div className={styles.body}>
       <Header />
-      <h1>Bienvenue sur la page d'accueil de mon site</h1>
+      <h1>Bienvenue sur la page accueil de mon site</h1>
       <p>...</p>
     </div>
   );
