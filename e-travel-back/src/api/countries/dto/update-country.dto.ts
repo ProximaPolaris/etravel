@@ -1,4 +1,27 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateCountryDto } from './create-country.dto';
+import { IsOptional, IsString } from 'class-validator';
 
-export class UpdateCountryDto extends PartialType(CreateCountryDto) {}
+export class UpdateCountryDto {
+  @IsOptional()
+  @IsString()
+  code?: string;
+
+  @IsOptional()
+  @IsString()
+  name?: string;
+
+  @IsOptional()
+  @IsString()
+  full_name?: string;
+
+  @IsOptional()
+  @IsString()
+  iso3?: string;
+
+  @IsOptional()
+  @IsString()
+  numeric_code?: string;
+
+  @IsOptional()
+  @IsString()
+  continent_code?: string;
+}
