@@ -41,7 +41,7 @@ import { TypeActivitiesModule } from './api/type-activities/type-activities.modu
         Travel,
         TypeActivity,
       ],
-      synchronize: true,
+      synchronize: false,
     }),
     UsersModule,
     CountriesModule,
