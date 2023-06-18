@@ -1,5 +1,15 @@
+import { IsInt, IsNotEmpty, IsString } from 'class-validator';
+
 export class CreateActivityDto {
-  typeId: number;
-  travelId: number;
-  mapUrl: string;
+  @IsInt()
+  @IsNotEmpty()
+  type_id: number;
+
+  @IsInt()
+  @IsNotEmpty()
+  travel_id: number;
+
+  @IsString()
+  @IsNotEmpty()
+  map_url: string;
 }
