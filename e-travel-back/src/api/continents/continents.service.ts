@@ -1,26 +1,34 @@
 import { Injectable } from '@nestjs/common';
 import { CreateContinentDto } from './dto/create-continent.dto';
 import { UpdateContinentDto } from './dto/update-continent.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Continent } from './entities/continent.entity';
 
 @Injectable()
 export class ContinentsService {
+  constructor(
+    @InjectRepository(Continent)
+    private continentRepository: Repository<Continent>,
+  ) {}
+
   create(createContinentDto: CreateContinentDto) {
-    return 'This action adds a new continent';
+    return this.continentRepository.save(createContinentDto);
   }
 
   findAll() {
-    return `This action returns all continents`;
+    return this.continentRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} continent`;
+  findOne(code: string) {
+    return this.continentRepository.findOneBy({ code });
   }
 
-  update(id: number, updateContinentDto: UpdateContinentDto) {
-    return `This action updates a #${id} continent`;
+  update(code: string, updateContinentDto: UpdateContinentDto) {
+    return this.continentRepository.update(code, updateContinentDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} continent`;
+  remove(code: string) {
+    return this.continentRepository.delete({ code });
   }
 }

@@ -4,6 +4,7 @@ import {
   IsDate,
   IsEmail,
   IsOptional,
+  IsInt,
 } from 'class-validator';
 
 export class CreateUserDto {
@@ -20,8 +21,8 @@ export class CreateUserDto {
   birthdate: Date;
 
   @IsNotEmpty()
-  @IsString()
-  countryId: string;
+  @IsInt()
+  countryId: number;
 
   @IsNotEmpty()
   @IsString()

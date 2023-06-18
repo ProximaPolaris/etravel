@@ -1,6 +1,7 @@
 import { IsOptional, IsInt, IsString } from 'class-validator';
-
-export class UpdateActivityDto {
+import { CreateActivityDto } from './create-activity.dto';
+import { PartialType } from '@nestjs/mapped-types';
+export class UpdateActivityDto extends PartialType(CreateActivityDto) {
   @IsOptional()
   @IsInt()
   type_id?: number;

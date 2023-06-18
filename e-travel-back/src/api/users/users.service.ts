@@ -4,7 +4,6 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
-import { plainToClass } from 'class-transformer';
 
 @Injectable()
 export class UsersService {
@@ -14,8 +13,7 @@ export class UsersService {
   ) {}
 
   create(createUserDto: CreateUserDto) {
-    const user = plainToClass(User, createUserDto);
-    return this.userRepository.save(user);
+    return this.userRepository.save(createUserDto);
   }
 
   findAll() {
@@ -27,12 +25,7 @@ export class UsersService {
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
-    const { countryId, ...rest } = updateUserDto;
-    const updatedUser = {
-      countryId: parseInt(countryId),
-      ...rest,
-    };
-    return this.userRepository.update(id, updatedUser);
+    return this.userRepository.update(id, updateUserDto);
   }
 
   remove(id: number) {
