@@ -1,4 +1,15 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateCalendarDto } from './create-calendar.dto';
+import { IsOptional, IsInt, IsDate } from 'class-validator';
 
-export class UpdateCalendarDto extends PartialType(CreateCalendarDto) {}
+export class UpdateCalendarDto {
+  @IsOptional()
+  @IsInt()
+  travel_id?: number;
+
+  @IsOptional()
+  @IsDate()
+  date?: Date;
+
+  @IsOptional()
+  @IsInt()
+  activity_id?: number;
+}
