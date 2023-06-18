@@ -13,7 +13,7 @@ export class CountriesService {
   ) {}
 
   create(createCountryDto: CreateCountryDto) {
-    return this.countryRepository.create(createCountryDto);
+    return this.countryRepository.save(createCountryDto);
   }
 
   findAll() {
