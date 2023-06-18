@@ -1,12 +1,13 @@
 import Header from '../components/Header/Header';
-import styles from '@import/styles/pages/Index.module.css'
+import styles from '@import/styles/pages/Index.module.scss'
 
 const IndexPage = () => {
   return (
     <div className={styles.body}>
       <Header />
-      <h1>Bienvenue sur la page accueil de mon site</h1>
-      <p>...</p>
+      <div className={styles.footer}>
+
+      </div>
     </div>
   );
 };
