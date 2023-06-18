@@ -11,7 +11,7 @@ const ForgotPage = () => {
                     <div className={styles.form}>
                         <h2>Forgot Password</h2>
                         <div className={styles.inputCard}>
-                            <span>Email</span>
+                            <label>Email</label>
                             <input type="email" required/>
                         </div>
                         <input type="submit" className={styles.buttonCard} />
