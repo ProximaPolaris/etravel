@@ -26,11 +26,23 @@
                     h4 {
                         margin-bottom: 10px;
                     }
+                    ul li {
+                        list-style-type: none;
+                        padding : 5px 0;
+                        transition: 0.3s ease-in-out;
+                        &:hover {
+                            color: #EC8D40;
+                        }
+                    }
                     .icons {
                         display: flex;
                         flex-direction: row;
                         .icon {
                             margin-right: 10px;
+                            transition: 0.3s ease-in-out;
+                            &:hover {
+                                color: #EC8D40;
+                            }
                         }
                     }
                 }
@@ -46,8 +58,9 @@
             display: flex;
             justify-content: center;
             .copyright {
+                margin-top: 15px;
                 text-align: left;
-                padding-bottom: 10px;
+                padding: 5px 0;
             }
         }
     }

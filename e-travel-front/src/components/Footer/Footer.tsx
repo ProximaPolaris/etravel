@@ -12,23 +12,30 @@ const Footer = () => {
                 <div className={styles.widgets}>
                     <div className={styles.widget}>
                         <div className={styles.nav_menu}>
-                            <h4>About</h4>
+                            <h4>Documentation</h4>
                             <ul>
-                                <li>test</li>
-                                <li>test</li>
-                                <li>test</li>
-                                <li>test</li>
+                                <li>
+                                    <a href="">API</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div className={styles.widget}>
                         <div className={styles.nav_menu}>
-                            <h4>Contact</h4>
+                            <h4>Support</h4>
                             <ul>
-                                <li>test</li>
-                                <li>test</li>
-                                <li>test</li>
-                                <li>test</li>
+                                <li>
+                                    <a href="">Term et condition</a>
+                                </li>
+                                <li>
+                                    <a href="">Legal information</a>
+                                </li>
+                                <li>
+                                    <a href="">Privacy policy</a>
+                                </li>
+                                <li>
+                                    <a href="">Contact</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
