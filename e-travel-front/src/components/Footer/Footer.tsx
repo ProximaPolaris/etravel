@@ -13,11 +13,23 @@ const Footer = () => {
                     <div className={styles.widget}>
                         <div className={styles.nav_menu}>
                             <h4>About</h4>
+                            <ul>
+                                <li>test</li>
+                                <li>test</li>
+                                <li>test</li>
+                                <li>test</li>
+                            </ul>
                         </div>
                     </div>
                     <div className={styles.widget}>
                         <div className={styles.nav_menu}>
                             <h4>Contact</h4>
+                            <ul>
+                                <li>test</li>
+                                <li>test</li>
+                                <li>test</li>
+                                <li>test</li>
+                            </ul>
                         </div>
                     </div>
                     <div className={styles.widget}>

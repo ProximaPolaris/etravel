@@ -65,13 +65,18 @@ const IndexPage = () => {
           <div className={styles.about}>
             <h1>About E-Travel</h1>
             <span>
-              E-Travel vous facilite la planification de votre voyage en vous proposant un système intégré de visualisation pour 
-              les billets d'avion, le logement et les activités, avec des comparateurs de prix pour les vols et le logement pour 
-              économiser de l'argent. Vous pouvez planifier votre voyage de A à Z avec une prévisualisation d'itinéraire disponible 
-              en cas de défaut d'internet.<br /><br />
-              Le public visé par E-Travel est constitué de voyageurs soucieux de planifier leur voyage de manière efficace et économique, 
-              en utilisant un système intégré pour la réservation de billets d'avion, de logement et d'activités. 
-              Ce public peut inclure des voyageurs individuels, des familles, des petits groupes et des voyageurs d'affaires.
+              E-Travel vous facilite la planification de votre voyage en vous proposant un système intégré de visualisation pour
+              les billets d'avion, le logement et les activités, avec des comparateurs de prix pour les vols et le logement pour
+              économiser de l'argent. Vous pouvez planifier votre voyage de A à Z avec une prévisualisation d'itinéraire disponible
+              en cas de défaut d'internet.
+              <br />
+              <br />
+              Le public visé par E-Travel est constitué de voyageurs soucieux de planifier leur voyage de manière efficace et économique,
+              en utilisant un système intégré pour la réservation de billets d'avion, la réservation d'hébergement et la recherche
+              d'activités touristiques.
+              <br />
+              <br />
+              E-Travel est développé par une équipe passionnée par les voyages et les technologies de l'information.
             </span>
           </div>
           <div className={styles.img}>
