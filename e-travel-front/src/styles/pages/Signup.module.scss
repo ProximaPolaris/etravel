@@ -36,6 +36,11 @@
             padding: 10px 30px 10px 30px;
             border-radius: 8px;
             overflow: hidden;
+            @media (max-width: 768px) {
+                width: 500px;
+                height: 500px;
+                padding: 5px 15px 5px 15px;
+            }
             &::before {
                 content: '';
                 position: absolute;
@@ -91,6 +96,9 @@
                         color: #fff;
                         border-bottom: 2px solid #fff;
                         width: 40%;
+                        @media (max-width: 768px) {
+                            font-size: 20px;
+                        }
                     }
                 }
                 .form_content {
@@ -111,6 +119,9 @@
                                 font-size: 18px;
                                 font-weight: 500;
                                 margin-top: 20px;
+                                @media (max-width: 768px) {
+                                    font-size: 16px;
+                                }
                             }
                             input[type="text"],
                             input[type="date"],
@@ -120,6 +131,9 @@
                                 border-radius: 5px;
                                 margin-bottom: 20px;
                                 width: 250px;
+                                @media (max-width: 768px) {
+                                    width: 170px;
+                                }
                             }
                         }
                         .form_right div {
@@ -132,6 +146,9 @@
                                 font-size: 18px;
                                 font-weight: 500;
                                 margin-top: 20px;
+                                @media (max-width: 768px) {
+                                    font-size: 16px;
+                                }
                             }
                               
                             input[type="email"],
@@ -141,6 +158,9 @@
                                 border-radius: 5px;
                                 margin-bottom: 20px;
                                 width: 250px;
+                                @media (max-width: 768px) {
+                                    width: 170px;
+                                }
                             }
                         }
                         .form_all div {
@@ -153,6 +173,9 @@
                                 font-size: 18px;
                                 font-weight: 500;
                                 margin-top: 20px;
+                                @media (max-width: 768px) {
+                                    font-size: 16px;
+                                }
                             }
                               
                             input[type="text"] {
@@ -161,6 +184,9 @@
                                 border-radius: 5px;
                                 margin-bottom: 20px;
                                 width: 450px;
+                                @media (max-width: 768px) {
+                                    width: 300px;
+                                }
                             }
                         }
                     }

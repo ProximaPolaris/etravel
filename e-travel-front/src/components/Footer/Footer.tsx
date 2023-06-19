@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import styles from '../../styles/components/Footer.module.scss';
+import { FaGithub, FaTwitter } from 'react-icons/fa';
 import git from '../../img/icons8-github.svg';
 import Image from 'next/image';
 
@@ -25,12 +26,12 @@ const Footer = () => {
                             <div className={styles.icons}>
                                 <div className={styles.icon}>
                                     <a target="_blank" href="#" rel="noopener">
-                                        <img alt="Twitter" src="https://company.trivago.com/wp-content/uploads/2022/05/twitter-ffffff.svg" width="30px" />
+                                        <FaTwitter size={25}/>
                                     </a>
                                 </div>
                                 <div className={styles.icon}>
                                     <a target="_blank" href="https://github.com/ProximaPolaris/etravel" rel="noopener">
-                                        <Image src={git} alt="github" />
+                                        <FaGithub size={25}/>
                                     </a>
                                 </div>
                             </div>

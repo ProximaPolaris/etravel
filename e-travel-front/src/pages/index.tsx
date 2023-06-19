@@ -39,7 +39,7 @@ const IndexPage = () => {
     dots: false,
     infinite: true,
     speed: 3000,
-    slidesToShow: 2.8,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 0,
@@ -99,13 +99,13 @@ const IndexPage = () => {
                 </p>
                 <div className={styles.socialButtons}>
                   <a href="https://github.com/TomaRouki" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
-                    <FaGithub />
+                    <FaGithub size={20} />
                   </a>
                   <a href="https://www.linkedin.com/in/thomas-de-sousa-187b08189/" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin />
+                    <FaLinkedin size={20} />
                   </a>
                   <a href="#" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
-                    <FaInstagram />
+                    <FaInstagram size={20} />
                   </a>
                 </div>
               </div>
@@ -119,13 +119,13 @@ const IndexPage = () => {
                 </p>
                 <div className={styles.socialButtons}>
                   <a href="#" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
-                    <FaGithub />
+                    <FaGithub size={20}/>
                   </a>
                   <a href="https://www.linkedin.com/in/lucien-besnier-b236871b7/" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin />
+                    <FaLinkedin size={20} />
                   </a>
                   <a href="#" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
-                    <FaInstagram />
+                    <FaInstagram size={20} />
                   </a>
                 </div>
               </div>
@@ -139,13 +139,13 @@ const IndexPage = () => {
                 </p>
                 <div className={styles.socialButtons}>
                   <a href="https://github.com/Redcroow" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
-                    <FaGithub />
+                    <FaGithub size={20} />
                   </a>
                   <a href="https://www.linkedin.com/in/kilian-mevrel/" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin />
+                    <FaLinkedin size={20} />
                   </a>
                   <a href="#" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
-                    <FaInstagram />
+                    <FaInstagram size={20} />
                   </a>
                 </div>
               </div>
