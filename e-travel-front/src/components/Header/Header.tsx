@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-
 import styles from '../../styles/components/Header.module.scss';
-import logo from '../../img/logo.png';
+import logo from '../../img/etravel/logo.png';
 
 const Header = () => {
   const router = useRouter();

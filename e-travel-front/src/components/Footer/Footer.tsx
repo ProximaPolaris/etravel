@@ -1,6 +1,4 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-
 import styles from '../../styles/components/Footer.module.scss';
 import git from '../../img/icons8-github.svg';
 import Image from 'next/image';

@@ -36,9 +36,9 @@ const ForgotPage = () => {
             Marco Polo, le premier explorateur née au 13e siècle, 
             a vécu une incroyable aventure en Asie, découvrant des palais, 
             rencontrant des empereurs et rapportant des récits de dragons 
-            et de merveilles exotiques. 
+            et de merveilles exotiques. <br />
             Son voyage légendaire continue de nous inspirer à explorer le monde et à nourrir 
-            notre imagination.
+            notre imagination. <br/>
           </span>
         </div>
       </div>

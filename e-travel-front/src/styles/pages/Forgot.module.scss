@@ -2,6 +2,7 @@
     height: 100vh;
     width: 100%;
     display: flex;
+    padding-top: 50px;
     .content {
         background: linear-gradient(45deg, #0F1B48, #4d7898, #a5623b);
         background-size: 300% 300%;
@@ -120,6 +121,7 @@
             background-color: #0F1B48;
             font-family: 'Courier New', Courier, monospace;
             padding: 4rem;
+            text-align: justify;
             h1 {
                 font-size: 1.8rem;
                 line-height: 2.30rem;
