@@ -18,10 +18,13 @@
             display: flex;
             justify-content: space-evenly;
             .widget {
-                width: 15%;
-                font-size: 16px;
+                font-size: 14px;
                 margin-right: 20px;
                 margin-bottom: 20px;
+                @media screen and (min-width: 1200px) {
+                    width: 15%;
+                    font-size: 16px;
+                }
                 .nav_menu {
                     h4 {
                         margin-bottom: 10px;
@@ -61,6 +64,14 @@
                 margin-top: 15px;
                 text-align: left;
                 padding: 5px 0;
+                p {
+                    font-size: 14px;
+                }
+                @media screen and (min-width: 1200px) {
+                    p {
+                        font-size: 16px;
+                    }
+                }
             }
         }
     }

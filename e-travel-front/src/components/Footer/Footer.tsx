@@ -59,7 +59,7 @@ const Footer = () => {
             <div className={styles.footer_bottom}>
                 <div className={styles.container}>
                     <div className={styles.copyright}>
-                        © Copyright 2023 E-TRAVEL - All rights reserved
+                        <p>© Copyright 2023 E-TRAVEL - All rights reserved</p>
                     </div>
                 </div>
             </div>
