@@ -40,6 +40,23 @@
                 height: 600px;
                 width: 600px;
             }
+            @media screen and (max-width: 1100px) {
+                margin: 0 5%;
+                flex-direction: column-reverse;
+                .about {
+                    h1 {
+                        font-size: 35px;
+                    }
+                    span {
+                        font-size: 16px;
+                        margin: 0 5% 0 0;
+                    }
+                }
+                .img {
+                    height: 300px;
+                    width: 300px;
+                }
+            }
         }
     
         .section_voyage {
@@ -51,6 +68,37 @@
                 width: 500px;
                 height: 400px;
             }
+            @media screen and (max-width: 500px) {
+                margin: 0 5%;
+                .img_voyage {
+                    width: 100px;
+                    height: 80px;
+                }
+            }
+            @media screen and (min-width: 500px) {
+                .img_voyage {
+                    width: 150px;
+                    height: 100px;
+                }
+            }
+            @media screen and (min-width: 900px) {
+                .img_voyage {
+                    width: 200px;
+                    height: 150px;
+                }
+            }
+            @media screen and (min-width: 1200px) {
+                .img_voyage {
+                    width: 350px;
+                    height: 250px;
+                }
+            }
+            @media screen and (min-width: 1500px) {
+                .img_voyage {
+                    width: 500px;
+                    height: 400px;
+                }
+            }
         }
     
         .section_dev {
@@ -60,6 +108,9 @@
     
             h1 {
                 font-size: 50px;
+                @media screen and (max-width: 1100px) {
+                    font-size: 35px;
+                }
             }
     
             .team {
@@ -70,6 +121,9 @@
                 .card {
                     margin: 0 20px 0 0;
                     width: 350px;
+                    &:last-child {
+                        margin: 0;
+                    }
             
                     .cardContent {
                         padding: 20px;
@@ -117,6 +171,19 @@
                                     background-color: white;
                                     color :#000
                                 }
+                            }
+                        }
+                    }
+                }
+                @media screen and (max-width: 1100px) {
+                    flex-direction: column;
+                    align-items: center;
+                    .card {
+                        margin: 0;
+                        width: 300px;
+                        .cardContent {
+                            .cardImage {
+                                height: 250px;
                             }
                         }
                     }

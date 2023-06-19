@@ -67,7 +67,9 @@ const IndexPage = () => {
             <span>
               E-Travel vous facilite la planification de votre voyage en vous proposant un système intégré de visualisation pour
               les billets d'avion, le logement et les activités, avec des comparateurs de prix pour les vols et le logement pour
-              économiser de l'argent. Vous pouvez planifier votre voyage de A à Z avec une prévisualisation d'itinéraire disponible
+              économiser de l'argent. 
+              <br />
+              Vous pouvez planifier votre voyage de A à Z avec une prévisualisation d'itinéraire disponible
               en cas de défaut d'internet.
               <br />
               <br />
@@ -137,7 +139,7 @@ const IndexPage = () => {
             </div>
             <div className={styles.card}>
               <div className={styles.cardContent}>
-                {/* <Image className={styles.cardImage} src={lucien} alt='lucien' /> */}
+                <Image className={styles.cardImage} src={lucien} alt='lucien' />
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Donec aliquet auctor blandit.
