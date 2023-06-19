@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert } from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
 
 @Entity('users')
 export class User {
@@ -34,6 +35,11 @@ export class User {
 
   @Column({ name: 'key_api', length: 100 })
   keyApi: string;
+
+  @BeforeInsert()
+  generateApiKey() {
+    this.keyApi = uuidv4();
+  }
 
   @Column({ name: 'created_at', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;

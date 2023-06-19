@@ -1,11 +1,5 @@
-import {
-  IsNotEmpty,
-  IsString,
-  IsDate,
-  IsEmail,
-  IsOptional,
-  IsInt,
-} from 'class-validator';
+import { Transform } from 'class-transformer';
+import { IsNotEmpty, IsString, IsDate, IsEmail, IsInt } from 'class-validator';
 
 export class CreateUserDto {
   @IsNotEmpty()
@@ -18,6 +12,7 @@ export class CreateUserDto {
 
   @IsNotEmpty()
   @IsDate()
+  @Transform(({ value }) => new Date(value), { toClassOnly: true })
   birthdate: Date;
 
   @IsNotEmpty()
