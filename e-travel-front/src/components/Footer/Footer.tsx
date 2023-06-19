@@ -1,8 +1,6 @@
 import { useRouter } from 'next/router';
 import styles from '../../styles/components/Footer.module.scss';
 import { FaGithub, FaTwitter } from 'react-icons/fa';
-import git from '../../img/icons8-github.svg';
-import Image from 'next/image';
 
 const Footer = () => {
     const router = useRouter();
@@ -15,7 +13,7 @@ const Footer = () => {
                             <h4>Documentation</h4>
                             <ul>
                                 <li>
-                                    <a href="">API</a>
+                                    <a target="_blank" href="#" rel="noopener">API</a>
                                 </li>
                             </ul>
                         </div>
@@ -25,16 +23,16 @@ const Footer = () => {
                             <h4>Support</h4>
                             <ul>
                                 <li>
-                                    <a href="">Term et condition</a>
+                                    <a target="_blank" href="#" rel="noopener">Term et condition</a>
                                 </li>
                                 <li>
-                                    <a href="">Legal information</a>
+                                    <a target="_blank" href="#" rel="noopener">Legal information</a>
                                 </li>
                                 <li>
-                                    <a href="">Privacy policy</a>
+                                    <a target="_blank" href="#" rel="noopener">Privacy policy</a>
                                 </li>
                                 <li>
-                                    <a href="">Contact</a>
+                                    <a target="_blank" href="#" rel="noopener">Contact</a>
                                 </li>
                             </ul>
                         </div>
