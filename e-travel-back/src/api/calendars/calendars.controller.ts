@@ -1,8 +1,17 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { CalendarsService } from './calendars.service';
 import { CreateCalendarDto } from './dto/create-calendar.dto';
 import { UpdateCalendarDto } from './dto/update-calendar.dto';
-
+import { ApiTags } from '@nestjs/swagger';
+@ApiTags('calendars')
 @Controller('calendars')
 export class CalendarsController {
   constructor(private readonly calendarsService: CalendarsService) {}
@@ -23,7 +32,10 @@ export class CalendarsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCalendarDto: UpdateCalendarDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateCalendarDto: UpdateCalendarDto,
+  ) {
     return this.calendarsService.update(+id, updateCalendarDto);
   }
 

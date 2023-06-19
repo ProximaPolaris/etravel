@@ -10,7 +10,8 @@ import {
 import { CountriesService } from './countries.service';
 import { CreateCountryDto } from './dto/create-country.dto';
 import { UpdateCountryDto } from './dto/update-country.dto';
-
+import { ApiTags } from '@nestjs/swagger';
+@ApiTags('countries')
 @Controller('countries')
 export class CountriesController {
   constructor(private readonly countriesService: CountriesService) {}

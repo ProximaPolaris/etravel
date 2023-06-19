@@ -10,7 +10,8 @@ import {
 import { ContinentsService } from './continents.service';
 import { CreateContinentDto } from './dto/create-continent.dto';
 import { UpdateContinentDto } from './dto/update-continent.dto';
-
+import { ApiTags } from '@nestjs/swagger';
+@ApiTags('continents')
 @Controller('continents')
 export class ContinentsController {
   constructor(private readonly continentsService: ContinentsService) {}

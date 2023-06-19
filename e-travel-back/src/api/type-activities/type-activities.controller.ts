@@ -1,8 +1,18 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { TypeActivitiesService } from './type-activities.service';
 import { CreateTypeActivityDto } from './dto/create-type-activity.dto';
 import { UpdateTypeActivityDto } from './dto/update-type-activity.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('type-activities')
 @Controller('type-activities')
 export class TypeActivitiesController {
   constructor(private readonly typeActivitiesService: TypeActivitiesService) {}
@@ -23,7 +33,10 @@ export class TypeActivitiesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTypeActivityDto: UpdateTypeActivityDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateTypeActivityDto: UpdateTypeActivityDto,
+  ) {
     return this.typeActivitiesService.update(+id, updateTypeActivityDto);
   }
 
