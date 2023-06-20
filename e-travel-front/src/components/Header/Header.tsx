@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-
 import styles from '../../styles/components/Header.module.scss';
-import logo from '../../img/logo.png';
+import logo from '../../img/etravel/logo.png';
 
 const Header = () => {
   const router = useRouter();
@@ -30,7 +29,7 @@ const Header = () => {
         </div>
       }
       {
-        router.pathname === '/login' && 
+        (router.pathname === '/login'|| router.pathname === '/forgot') &&
         <div className={styles.text}>
           <h1>
             <span>E</span>
@@ -46,14 +45,14 @@ const Header = () => {
       }
       <div className={styles.action_button}>
         {
-          (router.pathname === '/' || router.pathname === '/signup') &&
+          (router.pathname === '/' || router.pathname === '/forgot' || router.pathname === '/signup') &&
           <Link href="/login" className={styles.signIn} id="sign-in-button">
             <span>Sign In</span>
             <i></i>
           </Link>
         }
         {
-          (router.pathname === '/' || router.pathname === '/login') &&
+          (router.pathname === '/' || router.pathname === '/forgot' || router.pathname === '/login') &&
           <Link href="/signup" className={styles.signUp} id="sign-up-button">
             <span>Sign Up</span>
             <i></i>
