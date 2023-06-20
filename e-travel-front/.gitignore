@@ -39,3 +39,6 @@ makefile
 
 # docker
 docker-compose.yml
+
+# package
+package-lock.json
