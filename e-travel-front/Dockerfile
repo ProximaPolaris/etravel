@@ -7,14 +7,14 @@ WORKDIR /app
 COPY package*.json ./
 
 RUN apk --no-cache --virtual build-dependencies add \
-  python3 \
-  make \
-  g++
+    python3 \
+    make \
+    g++
 RUN yarn install --production
 
-RUN npm install 
-
 COPY . .
+
+RUN npm run build
 
 EXPOSE 3000
 
