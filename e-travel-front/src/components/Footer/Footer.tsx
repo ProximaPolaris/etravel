@@ -13,7 +13,7 @@ const Footer = () => {
                             <h4>Documentation</h4>
                             <ul>
                                 <li>
-                                    <a target="_blank" href="#" rel="noopener">API</a>
+                                    <a target="_blank" href="http://localhost:4000/api" rel="noopener">API</a>
                                 </li>
                             </ul>
                         </div>

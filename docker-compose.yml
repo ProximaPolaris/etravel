@@ -39,10 +39,10 @@ services:
       PMA_USER: root
       PMA_PASSWORD: root
       PMA_ARBITRARY: 0
-  metabase:
-    image: metabase/metabase
-    ports:
-      - 6969:3000
-    restart: unless-stopped
+  # metabase:
+  #   image: metabase/metabase
+  #   ports:
+  #     - 6969:3000
+  #   restart: unless-stopped
 volumes:
   database_data:

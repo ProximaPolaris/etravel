@@ -3,9 +3,12 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import styles from '../../styles/components/Header.module.scss';
 import logo from '../../img/etravel/logo.png';
+import { useState } from 'react';
+import { FiUser } from 'react-icons/fi';
 
 const Header = () => {
   const router = useRouter();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   return (
     <div className={styles.container}>
       <div>
@@ -14,7 +17,7 @@ const Header = () => {
         </a>
       </div>
       {
-        (router.pathname === '/' || router.pathname === '/signup')&& 
+        (router.pathname === '/' || router.pathname === '/signup' || router.pathname === '/home')&& 
         <div className={styles.textIndex}>
           <h1>
             <span>E</span>
@@ -58,6 +61,19 @@ const Header = () => {
             <i></i>
           </Link>
         }
+        <div className={styles.userProfile}>
+          <button className={styles.profileButton} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+            <FiUser className={styles.profileImage} />
+          </button>
+          {isDropdownOpen && (
+            <div className={styles.dropdown}>
+              <ul>
+                <li>Mon compte</li>
+                <li>Déconnexion</li>
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
