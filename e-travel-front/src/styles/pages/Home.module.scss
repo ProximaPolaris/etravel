@@ -1,6 +1,96 @@
 .container {
+    background: #fff;
+    color: black;
     height: 100vh;
     width: 100%;
     display: flex;
-    padding-top: 50px;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-content: space-between;
+
+    .content {
+        padding-top: 90px;
+
+        .section_action_button {
+            padding: 30px 0;
+            margin: 0 10%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+
+            button {
+                padding: 12px 24px;
+                font-size: 16px;
+                font-weight: bold;
+                border-radius: 8px;
+                background-color: #4d7898;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease-in-out;
+                &:first-child {
+                    margin-right: 10px;
+                }
+                &:hover {
+                    background-color: #314d63;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        .section_travel {
+            padding: 30px 0;
+            margin: 0 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+          
+            .title {
+                padding: 10px 0;
+
+            }
+            .card {
+                margin-bottom: 20px;
+                border: 1px solid black;
+                width: 100%;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                padding: 0px 0 0 10px;
+                position: relative;
+                border-radius: 2px;
+                .info {
+                    flex-basis: 50%;
+                    text-align: center;
+                    &:not(:last-child) {
+                        border-right: 1px solid black;
+                    }
+                    p {
+                        margin: 0;
+                    }
+                }
+                
+                .button {
+                    flex-basis: 10%;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    button {
+                      width: 50px;
+                      height: 50px;
+                      border: none;
+                      background-color: transparent;
+                      cursor: pointer;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: black;
+                    }
+                }  
+            }
+        }
+    }
 }

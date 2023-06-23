@@ -4,11 +4,18 @@ import { useRouter } from 'next/router';
 import styles from '../../styles/components/Header.module.scss';
 import logo from '../../img/etravel/logo.png';
 import { useState } from 'react';
-import { FiUser } from 'react-icons/fi';
+import { FiUser, FiLogOut } from 'react-icons/fi';
 
 const Header = () => {
   const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const redirectToAccount = () => {
+    router.push('/account');
+  };
+  const logout = () => {
+    router.push('/logout');
+  };
+  
   return (
     <div className={styles.container}>
       <div>
@@ -68,8 +75,14 @@ const Header = () => {
           {isDropdownOpen && (
             <div className={styles.dropdown}>
               <ul>
-                <li>Mon compte</li>
-                <li>Déconnexion</li>
+                <li onClick={redirectToAccount}>
+                  <FiUser className={styles.icon} />
+                  <p>Mon compte</p>
+              </li>
+                <li onClick={logout}>
+                  <FiLogOut className={styles.icon} />
+                  <p>Déconnexion</p>
+                </li>
               </ul>
             </div>
           )}

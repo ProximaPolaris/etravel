@@ -255,18 +255,21 @@
         background-color: #fff;
         color: #28282E;
         border-radius: 4px;
-        padding: 8px;
+        padding: 8px 10px;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-
+        width: 150px;
         ul {
           list-style: none;
           padding: 0;
           margin: 0;
-
           li {
             padding: 8px;
             cursor: pointer;
-
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
             &:hover {
               background-color: #f5f5f5;
             }
