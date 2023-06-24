@@ -1,114 +1,153 @@
 .container {
-    background: #fff;
-    color: black;
-    height: 100vh;
-    width: 100%;
+  background: #fff;
+  color: black;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-content: space-between;
+
+  .content {
+    padding-top: 90px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    justify-content: space-between;
+    flex-direction: column-reverse;
+    @media screen and (min-width: 700px) {
+      flex-direction: column;
+    }
 
-    .content {
-        padding-top: 90px;
+    .section_action_button {
+      padding: 30px 0;
+      margin: 0 10%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      @media screen and (min-width: 700px) {
+        justify-content: flex-end;
+      }
 
-        .section_action_button {
-            padding: 30px 0;
-            margin: 0 10%;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: center;
-
-            button {
-                padding: 12px 24px;
-                font-size: 16px;
-                font-weight: bold;
-                border-radius: 8px;
-                background-color: #4d7898;
-                color: #fff;
-                border: none;
-                cursor: pointer;
-                transition: background-color 0.3s ease-in-out;
-                &:first-child {
-                    margin-right: 10px;
-                }
-                &:hover {
-                    background-color: #314d63;
-                }
-                &:focus {
-                    outline: none;
-                }
-            }
+      button {
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 8px;
+        background-color: #4d7898;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+        &:first-child {
+          margin-right: 10px;
         }
-        .section_travel {
-            padding: 30px 0;
-            margin: 0 10%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            
-            .title {
-              padding: 10px 0;
-              font-family: 'Helvetica Neue', sans-serif;
-              color: #333;
-            }
-            
-            .card {
-              margin-bottom: 20px;
-              border: 1px solid #ddd;
-              width: 100%;
-              height: 80px;
-              display: flex;
-              align-items: center;
-              padding: 0px 0 0 10px;
-              position: relative;
-              border-radius: 4px;
-              transition: all 0.3s ease;
-              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-              
-              &:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-              }
-              
-              .info {
-                flex-basis: 50%;
-                text-align: center;
-                &:not(:last-child) {
-                  border-right: 1px solid #ddd;
-                }
-                p {
-                  margin: 0;
-                  font-family: 'Helvetica Neue', sans-serif;
-                  color: #777;
-                }
-              }
-              
-              .button {
-                flex-basis: 10%;
-                text-align: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                button {
-                  width: 50px;
-                  height: 50px;
-                  border: none;
-                  background-color: transparent;
-                  cursor: pointer;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  color: #777;
-                  transition: color 0.3s ease;
-                  
-                  &:hover {
-                    color: #333;
-                  }
-                }
-              }
+        &:hover {
+          background-color: #314d63;
+        }
+        &:focus {
+          outline: none;
+        }
+        @media screen and (min-width: 700px) {
+          padding: 12px 24px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+    .section_travel {
+      padding: 30px 0;
+      margin: 0 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      
+      .title {
+        padding: 10px 0;
+        font-family: 'Helvetica Neue', sans-serif;
+        color: #333;
+        font-size: 12px;
+        @media screen and (min-width: 700px) {
+          font-size: 18px;
+        }
+      }
+      
+      .card {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        padding: 0 2px 0 0;
+        position: relative;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        @media screen and (min-width: 700px) {
+          padding: 0px 0 0 10px;
+        }
+        
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .info {
+          flex-basis: 50%;
+          text-align: center;
+          &:not(:last-child) {
+            border-right: 1px solid #ddd;
+          }
+          &.information2 {
+            display: block;
+          }
+          p {
+            margin: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            color: #777;
+            font-size: 14px;
+          }
+          @media screen and (min-width: 700px) {
+            p {
+              font-size: 16px;
             }
           }
-          
+          @media screen and (max-width: 700px) {
+            &.information2 {
+              display: none;
+            }
+          }
+        }
+        
+        .button {
+          flex-basis: 10%;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          button {
+            width: 25px;
+            height: 25px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            transition: color 0.3s ease;
+            
+            &:hover {
+              color: #333;
+            }
+          }
+          @media screen and (min-width: 700px) {
+            button {
+              width: 60px;
+              height: 60px;
+            }
+          }
+        }
+      }
     }
+  }
 }

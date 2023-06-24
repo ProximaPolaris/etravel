@@ -34,7 +34,7 @@ const HomePage = () => {
                             <div className={styles.info}>
                             <p>Information 1</p>
                             </div>
-                            <div className={styles.info}>
+                            <div className={`${styles.info} ${styles.information2}`}>
                             <p>Information 2</p>
                             </div>
                             <div className={styles.button}>
@@ -56,7 +56,7 @@ const HomePage = () => {
                             <div className={styles.info}>
                             <p>Information 1</p>
                             </div>
-                            <div className={styles.info}>
+                            <div className={`${styles.info} ${styles.information2}`}>
                             <p>Information 2</p>
                             </div>
                             <div className={styles.button}>
