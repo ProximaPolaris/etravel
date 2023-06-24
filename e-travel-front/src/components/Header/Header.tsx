@@ -69,7 +69,7 @@ const Header = () => {
           </Link>
         }
         {
-          (router.pathname === 'home' || router.pathname === '/account') &&
+          (router.pathname === '/home' || router.pathname === '/account') &&
           <div className={styles.userProfile}>
             <button className={styles.profileButton} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
               <FiUser className={styles.profileImage} />

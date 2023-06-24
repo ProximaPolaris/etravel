@@ -22,39 +22,20 @@ const HomePage = () => {
                     </div>
                     <div className={styles.section_travel}>
                         <div className={styles.title}>
-                            <h1>Mes travels</h1>
+                            <h1>Mes Travels</h1>
                         </div>
                         <div className={styles.card} id='1'>
                             <div className={styles.info}>
-                                <p>Date</p>
+                            <p>Date</p>
                             </div>
                             <div className={styles.info}>
-                                <p>Pays</p>
+                            <p>Pays</p>
                             </div>
                             <div className={styles.info}>
-                                <p>Information 1</p>
+                            <p>Information 1</p>
                             </div>
                             <div className={styles.info}>
-                                <p>Information 2</p>
-                            </div>
-                            <div className={styles.button}>
-                                <button>
-                                    <RiPencilLine size={27}/>
-                                </button>
-                            </div>
-                        </div>
-                        <div className={styles.card} id='2'>
-                            <div className={styles.info}>
-                                <p>Date</p>
-                            </div>
-                            <div className={styles.info}>
-                                <p>Pays</p>
-                            </div>
-                            <div className={styles.info}>
-                                <p>Information 1</p>
-                            </div>
-                            <div className={styles.info}>
-                                <p>Information 2</p>
+                            <p>Information 2</p>
                             </div>
                             <div className={styles.button}>
                                 <button>
@@ -63,20 +44,20 @@ const HomePage = () => {
                             </div>
                         </div>
                         <div className={styles.title}>
-                            <h1>Mes anciens travels</h1>
+                            <h1>Mes anciens Travels</h1>
                         </div>
                         <div className={styles.card} id='3'>
                             <div className={styles.info}>
-                                <p>Date</p>
+                            <p>Date</p>
                             </div>
                             <div className={styles.info}>
-                                <p>Pays</p>
+                            <p>Pays</p>
                             </div>
                             <div className={styles.info}>
-                                <p>Information 1</p>
+                            <p>Information 1</p>
                             </div>
                             <div className={styles.info}>
-                                <p>Information 2</p>
+                            <p>Information 2</p>
                             </div>
                             <div className={styles.button}>
                                 <button>
