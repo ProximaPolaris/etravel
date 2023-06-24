@@ -11,6 +11,7 @@ import styles from '@import/styles/pages/Index.module.scss';
 import about from '../img/etravel/about-etravel.png';
 import thomas from '../img/team/1599916246528.jpeg';
 import lucien from '../img/team/1600270558214.jpeg';
+import kilian from '../img/team/Screenshot_1.png';
 import monument1 from '../img/monument/monument1.png';
 import monument2 from '../img/monument/monument2.png';
 import monument3 from '../img/monument/monument3.png';
@@ -100,10 +101,10 @@ const IndexPage = () => {
             <div className={styles.card}>
               <div className={styles.cardContent}>
                 <Image className={styles.cardImage} src={thomas} alt='thomas' />
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Donec aliquet auctor blandit.
-                </p>
+                <div>
+                  <h3>DE SOUSA Thomas</h3>
+                  <p>Développeur Full Stack Spec Back</p>
+                </div>
                 <div className={styles.socialButtons}>
                   <a href="https://github.com/TomaRouki" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
                     <FaGithub size={20} />
@@ -120,10 +121,10 @@ const IndexPage = () => {
             <div className={styles.card}>
               <div className={styles.cardContent}>
                 <Image className={styles.cardImage} src={lucien} alt='lucien' />
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Donec aliquet auctor blandit.
-                </p>
+                <div>
+                  <h3>BESNIER Lucien</h3>
+                  <p>Développeur Full Stack</p>
+                </div>
                 <div className={styles.socialButtons}>
                   <a href="#" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
                     <FaGithub size={20}/>
@@ -139,11 +140,11 @@ const IndexPage = () => {
             </div>
             <div className={styles.card}>
               <div className={styles.cardContent}>
-                <Image className={styles.cardImage} src={lucien} alt='lucien' />
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Donec aliquet auctor blandit.
-                </p>
+                <Image className={styles.cardImage} src={kilian} alt='kilian' />
+                <div>
+                  <h3>MEVREL Kilian</h3>
+                  <p>Développeur Full Stack Javascript Spec Front | Chef de projet</p>
+                </div>
                 <div className={styles.socialButtons}>
                   <a href="https://github.com/Redcroow" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
                     <FaGithub size={20} />
@@ -151,7 +152,7 @@ const IndexPage = () => {
                   <a href="https://www.linkedin.com/in/kilian-mevrel/" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
                     <FaLinkedin size={20} />
                   </a>
-                  <a href="#" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.instagram.com/km_phooto/" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
                     <FaInstagram size={20} />
                   </a>
                 </div>

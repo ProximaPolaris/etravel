@@ -27,7 +27,7 @@
     transform: translateX(-50%) scale(0.8);
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-family: 'bad Script', cursive;
+    font-family: Helvetica;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +92,7 @@
     transform: translateX(-50%) scale(0.6);
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-family: 'bad Script', cursive;
+    font-family: Helvetica;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -230,6 +230,56 @@
     a:hover i::after {
       width: 20px;
       left: 80%;
+    }
+    .userProfile {
+      position: relative;
+      display: inline-block;
+
+      .profileButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .profileImage {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        @media screen and (min-width: 700px) {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #fff;
+        color: #28282E;
+        border-radius: 4px;
+        padding: 8px 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        width: 150px;
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li {
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            &:hover {
+              background-color: #f5f5f5;
+            }
+          }
+        }
+      }
     }
   }
 }

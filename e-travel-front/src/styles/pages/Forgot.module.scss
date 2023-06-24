@@ -26,7 +26,7 @@
     }
     .card {
         box-shadow: 5px 5px 15px 5px rgba($color: #000000, $alpha: 0.4);
-        font-family: 'Courier New', Courier, monospace;
+        font-family: Helvetica;
         background: #1c1c1c;
         display: flex;
         justify-content: center;
@@ -57,7 +57,7 @@
                 position: relative;
                 width: 300px;
                 margin-top: 35px;
-                font-family: 'Courier New', Courier, monospace;
+                font-family: Helvetica;
                 label {
                     font-size: 18px;
                     font-weight: 500;
@@ -91,7 +91,7 @@
         padding-left: 40px;
         a button {
             background-color: transparent;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: Helvetica;
             border: none;
             outline: none;
             cursor: pointer;
@@ -119,7 +119,7 @@
             flex-direction: column;
             flex: 1;
             background-color: #0F1B48;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: Helvetica;
             padding: 4rem;
             text-align: justify;
             h1 {
