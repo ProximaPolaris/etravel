@@ -1,8 +1,53 @@
 .container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    .content {
-        padding-top: 90px;
+  height: 100vh;
+  width: 100%;
+  font-family: Helvetica;
+
+  .content {
+    padding-top: 90px;
+    
+    .section_country {
+      padding: 30px 0;
     }
+
+    .section_images_travel {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow-x: auto;
+
+      .image-container {
+        position: relative;
+        margin: 5px;
+        width: 600px;
+        height: 600px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
+        }
+        img {
+            width: 600px;
+            height: 600px;
+        }
+
+        .text {
+          position: absolute;
+          top: 70%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #333;
+          padding: 10px 10px;
+          border: 1px solid #333;
+          border-radius: 5px;
+          color: white;
+          font-size: 20px;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+        }
+      }
+    }
+  }
 }
