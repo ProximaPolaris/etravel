@@ -68,25 +68,28 @@ const Header = () => {
             <i></i>
           </Link>
         }
-        <div className={styles.userProfile}>
-          <button className={styles.profileButton} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-            <FiUser className={styles.profileImage} />
-          </button>
-          {isDropdownOpen && (
-            <div className={styles.dropdown}>
-              <ul>
-                <li onClick={redirectToAccount}>
-                  <FiUser className={styles.icon} />
-                  <p>Mon compte</p>
-              </li>
-                <li onClick={logout}>
-                  <FiLogOut className={styles.icon} />
-                  <p>Déconnexion</p>
+        {
+          (router.pathname === 'home' || router.pathname === '/account') &&
+          <div className={styles.userProfile}>
+            <button className={styles.profileButton} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+              <FiUser className={styles.profileImage} />
+            </button>
+            {isDropdownOpen && (
+              <div className={styles.dropdown}>
+                <ul>
+                  <li onClick={redirectToAccount}>
+                    <FiUser className={styles.icon} />
+                    <p>Mon compte</p>
                 </li>
-              </ul>
-            </div>
-          )}
-        </div>
+                  <li onClick={logout}>
+                    <FiLogOut className={styles.icon} />
+                    <p>Déconnexion</p>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+        }
       </div>
     </div>
   );
