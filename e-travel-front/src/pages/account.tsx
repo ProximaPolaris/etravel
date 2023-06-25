@@ -17,8 +17,6 @@ const AccountPage = () => {
   const handleSaveClick = () => {
     setIsEditable(false);
     setIsSaving(true);
-    // Ajoutez ici la logique pour enregistrer les modifications
-    // Par exemple, vous pouvez envoyer les données modifiées au serveur
   };
 
   return (
@@ -77,7 +75,7 @@ const AccountPage = () => {
                 </div>
               </div>
             </form>
-            <div>
+            <div className={styles.action_button}>
               <a href="/home">
                 <button className={styles.retourButton}>Retour</button>
               </a>
