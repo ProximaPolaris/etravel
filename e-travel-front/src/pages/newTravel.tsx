@@ -18,7 +18,7 @@ const NewTravelPage = () => {
                 </div>
                 <div className={styles.section_images_travel}>
                     <div className={styles.image_container}>
-                        <a href="#" className={styles.img_link}>
+                        <a href="/newTransportation" className={styles.img_link}>
                             <div className={styles.img_wrapper}>
                                 <Image src={plane} alt="Logo" />
                             </div>
