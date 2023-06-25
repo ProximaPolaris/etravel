@@ -51,6 +51,9 @@ const NewTransportationPage = () => {
                         </div>
                     </div>
                 </div>
+                <div className={styles.action_button}>
+                    <a href='/newTravel'>Back</a>
+                </div>
             </div>
         </div>
     </>

@@ -12,10 +12,10 @@
         margin: 0;
         box-sizing: border-box;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         min-height: 100vh;
-    
+        flex-direction: column;
         .loader {
             position: relative;
             width: 600px;
@@ -23,6 +23,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             span {
                 position: absolute;
                 top: 0;
@@ -169,9 +170,29 @@
                         background-color: #824d2f;
                       }
                     }
-                  }
-                  
+                }  
             }
         }
+        .action_button {
+            width: 100%;
+          
+            a {
+              margin: 0 50px;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 4px;
+              background-color: #333;
+              color: #fff;
+              font-size: 16px;
+              font-weight: bold;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+          
+              &:hover {
+                background-color: #824d2f;
+              }
+            }
+          }
+          
     }
 }
