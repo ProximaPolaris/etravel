@@ -4,6 +4,7 @@ import styles from '../styles/pages/Home.module.scss';
 import { FaTrash } from 'react-icons/fa';
 import { RiPencilLine } from 'react-icons/ri';
 import Footer from '../components/Footer/Footer';
+import Link from 'next/link';
 
 const HomePage = () => {
     // const [expanded, setExpanded] = useState(false);
@@ -15,9 +16,11 @@ const HomePage = () => {
                 </div>
                 <div className={styles.content}>
                     <div className={styles.section_action_button}>
-                        <button>Nouveau Travel</button>
+                        <Link href="/newTravel" id="newtravel-button">
+                            <button>Nouveau Travel</button>
+                        </Link>
                         <button>
-                        <FaTrash />
+                            <FaTrash />
                         </button>
                     </div>
                     <div className={styles.section_travel}>

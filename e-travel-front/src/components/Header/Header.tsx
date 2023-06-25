@@ -24,7 +24,13 @@ const Header = () => {
         </a>
       </div>
       {
-        (router.pathname === '/' || router.pathname === '/signup' || router.pathname === '/home')&& 
+        (
+          router.pathname === '/' || 
+          router.pathname === '/signup' || 
+          router.pathname === '/home' || 
+          router.pathname === '/account' || 
+          router.pathname === '/newTravel'
+        )&& 
         <div className={styles.textIndex}>
           <h1>
             <span>E</span>
@@ -69,7 +75,7 @@ const Header = () => {
           </Link>
         }
         {
-          (router.pathname === '/home' || router.pathname === '/account') &&
+          (router.pathname === '/home' || router.pathname === '/account' || router.pathname === '/newTravel') &&
           <div className={styles.userProfile}>
             <button className={styles.profileButton} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
               <FiUser className={styles.profileImage} />
