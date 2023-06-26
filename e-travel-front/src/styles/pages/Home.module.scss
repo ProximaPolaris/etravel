@@ -71,17 +71,17 @@
       }
       
       .card.expanded {
-        height: 200px; // Par exemple, ajustez la hauteur agrandie selon vos besoins
-        // Ajoutez d'autres styles pour agrandir la carte
+        height: 200px;
       }
       
       .card {
         margin-bottom: 20px;
         border: 1px solid #ddd;
         width: 100%;
-        height: 80px;
+        height: 60px;
         display: flex;
         align-items: center;
+        flex-direction: column;
         padding: 0 2px 0 0;
         position: relative;
         border-radius: 4px;
@@ -90,65 +90,89 @@
         @media screen and (min-width: 700px) {
           padding: 0px 0 0 10px;
         }
-        
         &:hover {
           transform: translateY(-5px);
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-        
-        .info {
-          flex-basis: 50%;
-          text-align: center;
-          &:not(:last-child) {
-            border-right: 1px solid #ddd;
-          }
-          &.information2 {
-            display: block;
-          }
-          p {
-            margin: 0;
-            font-family: 'Helvetica Neue', sans-serif;
-            color: #777;
-            font-size: 14px;
-          }
-          @media screen and (min-width: 700px) {
-            p {
-              font-size: 16px;
-            }
-          }
-          @media screen and (max-width: 700px) {
-            &.information2 {
-              display: none;
-            }
-          }
-        }
-        
-        .button {
-          flex-basis: 10%;
-          text-align: center;
+        .card_open {
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+          transition-delay: 0.2s;
+          padding: 10px;
+          width: 100%;
           display: flex;
           align-items: center;
           justify-content: center;
-          button {
-            width: 25px;
-            height: 25px;
-            border: none;
-            background-color: transparent;
-            cursor: pointer;
+          flex-direction: column;
+          .content1 {
+            width: 60%;
+            border-top:1px solid #ddd;
+          }
+          .description {
+            width: 100%;
+          }
+        }
+        
+        .card_closed {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          .info {
+            flex-basis: 50%;
+            text-align: center;
+            &:not(:last-child) {
+              border-right: 1px solid #ddd;
+            }
+            &.information2 {
+              display: block;
+            }
+            p {
+              margin: 0;
+              font-family: 'Helvetica Neue', sans-serif;
+              color: #777;
+              font-size: 14px;
+            }
+            @media screen and (min-width: 700px) {
+              p {
+                font-size: 16px;
+              }
+            }
+            @media screen and (max-width: 700px) {
+              &.information2 {
+                display: none;
+              }
+            }
+          }
+          
+          .button {
+            flex-basis: 10%;
+            text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #777;
-            transition: color 0.3s ease;
-            
-            &:hover {
-              color: #333;
-            }
-          }
-          @media screen and (min-width: 700px) {
             button {
-              width: 60px;
-              height: 60px;
+              width: 25px;
+              height: 25px;
+              border: none;
+              background-color: transparent;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #777;
+              transition: color 0.3s ease;
+              
+              &:hover {
+                color: #333;
+              }
+            }
+            @media screen and (min-width: 700px) {
+              button {
+                width: 60px;
+                height: 60px;
+              }
             }
           }
         }
