@@ -7,7 +7,7 @@ const SignupPage = () => {
     const [userInputs, setuserInputs] = useState([
         { label: 'First Name', type: 'text', name: 'first_name', id: 'first_name', required: true },
         { label: 'Last Name', type: 'text', name: 'last_name', id: 'last_name', required: true },
-        { label: 'Date of Birth', type: 'date', name: 'dob', id: 'dob', required: true }
+        { label: 'Date of Birth', type: 'date', name: 'dob', id: 'dob', required: true },
     ]);
     const [accountInputs, setAccountInputs] = useState([
         { label: 'Email', type: 'email', name: 'email', id: 'email', required: true },
@@ -48,15 +48,6 @@ const SignupPage = () => {
                                             {userInputs.map((input, index) => (
                                                 <div key={index}>
                                                     <label htmlFor={input.name}>{input.label}</label>
-                                                    {input.type === 'select' && input.options ? (
-                                                        <select id={input.name} name={input.name} required={input.required}>
-                                                            {input.options.map((option) => (
-                                                                <option key={option.id} id={option.id} value={option.value}>{option.label}</option>
-                                                            ))}
-                                                        </select>
-                                                    ) : (
-                                                        <input type={input.type} id={input.name} name={input.name} required={input.required} />
-                                                    )}
                                                 </div>
                                             ))}
                                         </div>
