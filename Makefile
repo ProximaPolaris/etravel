@@ -36,4 +36,4 @@ kiki:
 	git commit -m "feat: $${message}"; \
 	git push;
 
-all: install build up
+all: install up
