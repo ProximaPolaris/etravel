@@ -8,15 +8,15 @@ ifeq ($(OS),Windows_NT)
 else
 	@if [ -d "$(FRONT_DIR)/.next" ]; then rm -rf $(FRONT_DIR)/.next; fi
 endif
-	sudo npm i
-	cd $(FRONT_DIR) && sudo npm i 
-	cd $(BACK_DIR) && sudo npm i
+	npm i
+	cd $(FRONT_DIR) && npm i 
+	cd $(BACK_DIR) && npm i
 
 build:
-	sudo $(DOCKER_COMPOSE) build
+	$(DOCKER_COMPOSE) build
 
 up:
-	sudo $(DOCKER_COMPOSE) up
+	$(DOCKER_COMPOSE) up
 
 run-metabase:
 	@docker run -d -p 6969:3000 --name metabase metabase/metabase
