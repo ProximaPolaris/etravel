@@ -22,6 +22,3 @@ jobs:
       run: |
         ssh -o StrictHostKeyChecking=no etravel@13.80.156.135 "cd etravel && sudo docker compose down && cd .. && rm -rf etravel && git clone git@github.com:ProximaPolaris/etravel.git && cd etravel && npm i && cd e-travel-back && npm i && cd .. && cd e-travel-front && npm i && cd .. && sudo docker compose up"
 
-    - name: Execute makefile
-      run: |
-        ssh -o StrictHostKeyChecking=no etravel@13.80.156.135 "cd etravel && make all"
