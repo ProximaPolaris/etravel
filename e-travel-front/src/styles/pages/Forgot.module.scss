@@ -1,0 +1,135 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    padding-top: 50px;
+    .content {
+        background: linear-gradient(45deg, #0F1B48, #4d7898, #a5623b);
+        background-size: 300% 300%;
+        flex: 3 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        flex-direction: column;
+        animation: color 12s ease-in-out infinite;
+        @keyframes color {
+            0% {
+                background-position: 0 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0 50%;
+            }
+        }
+    }
+    .card {
+        box-shadow: 5px 5px 15px 5px rgba($color: #000000, $alpha: 0.4);
+        font-family: Helvetica;
+        background: #1c1c1c;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 360px;
+        height: 400px;
+        margin:auto;
+        padding: 10px 30px 10px 30px;
+        border-radius: 8px;
+        overflow: hidden;
+        .form {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            inset: 2px;
+            border-radius: 8px;
+            background: #28292d;
+            z-index: 20;
+            padding: 50px 40px;
+            flex-direction: column;
+            h2 {
+                color: #a5623b;
+                font-weight: 500;
+                text-align: center;
+                letter-spacing: 0.1em;
+            }
+            .inputCard {
+                position: relative;
+                width: 300px;
+                margin-top: 35px;
+                font-family: Helvetica;
+                label {
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin-top: 20px;
+                }
+                input {
+                    padding: 10px;
+                    border: none;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                    width: 280px;
+                }
+            }
+            .buttonCard {
+                border: none;
+                outline: none;
+                background-color: #a5623b;
+                padding: 11px 25px;
+                width: 100px;
+                border-radius: 4px;
+                font-weight: 600;
+                cursor: pointer;
+                &:active {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+    .action_button {
+        margin-bottom: 50px;
+        padding-left: 40px;
+        a button {
+            background-color: transparent;
+            font-family: Helvetica;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 400;
+            transition: .4s;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            border-radius: 10%;
+            color: white;
+            &:hover {
+                border: 1px solid #1c1c1c;
+                border-radius: 10%;
+                background: #1c1c1c;
+                color: #fff;
+            }
+        }
+    }
+    .right_part {
+        display: none;
+    }
+    @media screen and (min-width: 1200px) {
+        .right_part {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            background-color: #0F1B48;
+            font-family: Helvetica;
+            padding: 4rem;
+            text-align: justify;
+            h1 {
+                font-size: 1.8rem;
+                line-height: 2.30rem;
+                margin-bottom: 20px;
+            }
+            span {
+                font-weight: 300;
+            }
+        }
+    }
+}

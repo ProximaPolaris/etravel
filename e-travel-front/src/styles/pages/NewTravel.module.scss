@@ -1,0 +1,137 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    font-family: Helvetica;
+  
+    .content {
+        padding-top: 90px;
+    
+        .section_country {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 30px 0;
+            justify-content: center;
+    
+            label {
+                font-size: 18px;
+                color: #555;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-right: 10px;
+            }
+    
+            input[type="text"] {
+                padding: 10px 15px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                font-size: 16px;
+                color: white;
+                width: 300px;
+                max-width: 100%;
+                transition: border-color 0.3s ease;
+        
+                &:focus {
+                    outline: none;
+                    border-color: #777;
+                }
+            }
+        }
+    
+        .section_images_travel {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow-x: auto;
+    
+            .image_container {
+                position: relative;
+                margin: 5px;
+    
+                .img_link {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        
+                    &:hover {
+                        transform: translateY(-10px);
+                        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
+                    }
+        
+                    .img_wrapper {
+                        width: 600px;
+                        height: 600px;
+            
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+        
+                    .text {
+                        position: absolute;
+                        top: 70%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background-color: #333;
+                        padding: 10px 10px;
+                        border: 1px solid #333;
+                        border-radius: 5px;
+                        color: white;
+                        font-size: 20px;
+                        text-transform: uppercase;
+                        letter-spacing: 3px;
+                    }
+                }
+        
+                .input_img {
+                    margin-top: 20px;
+        
+                    input {
+                        padding: 10px 15px;
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        color: white;
+                        width: 100%;
+                        max-width: 600px;
+                    }
+                }
+            }
+        }
+
+        .section_action_button {
+            margin: 30px 10%;
+            display: flex;
+            justify-content: space-between;
+
+            .button {
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: bold;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                background-color: #333;
+                color: white;
+                &:hover {
+                    background-color: #252525;
+                }
+                &:last-child {
+                    background-color: #2643B1;
+                }
+                &:last-child:hover {
+                    background-color: #1c3487;
+                }
+            }
+        }
+
+    }
+}
+  

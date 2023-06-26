@@ -3,15 +3,19 @@ FRONT_DIR = e-travel-front
 BACK_DIR = e-travel-back
 
 install:
+ifeq ($(OS),Windows_NT)
+	@if exist "$(FRONT_DIR)\.next" rd /s /q $(FRONT_DIR)\.next
+else
 	@if [ -d "$(FRONT_DIR)/.next" ]; then rm -rf $(FRONT_DIR)/.next; fi
-	cd $(FRONT_DIR) && npm i next && npm i --force sass && npm run build
-	cd $(BACK_DIR) && npm i -g @nestjs/cli && npm i && npm run build
-	
+endif
+	cd $(FRONT_DIR) && npm i && npm run build
+	cd $(BACK_DIR) && npm i && npm run build
+
 build:
 	$(DOCKER_COMPOSE) build
 
 up:
-	$(DOCKER_COMPOSE) up -d
+	$(DOCKER_COMPOSE) up
 
 run-metabase:
 	@docker run -d -p 6969:3000 --name metabase metabase/metabase
@@ -31,5 +35,4 @@ kiki:
 	git commit -m "feat: $${message}"; \
 	git push;
 
-
-all: install build up run-metabase
+all: install build up

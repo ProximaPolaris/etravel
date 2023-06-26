@@ -421,7 +421,6 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `surname` varchar(50) NOT NULL,
-  `gender` enum('Male','Female','Other') NOT NULL,
   `birthdate` date NOT NULL,
   `country_id` int(11) NOT NULL,
   `city` varchar(50) NOT NULL,
@@ -430,7 +429,6 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `key_api` varchar(100) NOT NULL,
-  `role` enum('User','Admin','Super Admin') NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL

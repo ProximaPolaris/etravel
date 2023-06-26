@@ -25,7 +25,7 @@
     }
     .card {
         box-shadow: 5px 5px 15px 5px rgba($color: #000000, $alpha: 0.4);
-        font-family: 'Courier New', Courier, monospace;
+        font-family: Helvetica;
         background: #1c1c1c;
         display: flex;
         justify-content: center;
@@ -166,7 +166,7 @@
         padding-left: 40px;
         a button {
             background-color: transparent;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: Helvetica;
             border: none;
             outline: none;
             cursor: pointer;
@@ -176,7 +176,7 @@
             padding: 5px 10px;
             border: 1px solid transparent;
             border-radius: 10%;
-            color: #1c1c1c;
+            color: white;
             &:hover {
                 border: 1px solid #1c1c1c;
                 border-radius: 10%;
@@ -188,7 +188,7 @@
     @media screen and (min-width: 1200px) {
         .image {
             flex: 1;
-            background-image: url("../../img/img-left-login.png");
+            background-image: url("../../img/etravel/img-left-login.png");
             background-position: top;
             background-size: cover;
         }

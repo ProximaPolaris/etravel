@@ -1,12 +1,21 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-
 import styles from '../../styles/components/Header.module.scss';
-import logo from '../../img/logo.png';
+import logo from '../../img/etravel/logo.png';
+import { useState } from 'react';
+import { FiUser, FiLogOut } from 'react-icons/fi';
 
 const Header = () => {
   const router = useRouter();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const redirectToAccount = () => {
+    router.push('/account');
+  };
+  const logout = () => {
+    router.push('/logout');
+  };
+  
   return (
     <div className={styles.container}>
       <div>
@@ -15,7 +24,14 @@ const Header = () => {
         </a>
       </div>
       {
-        (router.pathname === '/' || router.pathname === '/signup')&& 
+        (
+          router.pathname === '/' || 
+          router.pathname === '/signup' || 
+          router.pathname === '/home' || 
+          router.pathname === '/account' || 
+          router.pathname === '/newTravel' ||
+          router.pathname === '/newTransportation'
+        )&& 
         <div className={styles.textIndex}>
           <h1>
             <span>E</span>
@@ -30,7 +46,7 @@ const Header = () => {
         </div>
       }
       {
-        router.pathname === '/login' && 
+        (router.pathname === '/login'|| router.pathname === '/forgot') &&
         <div className={styles.text}>
           <h1>
             <span>E</span>
@@ -46,18 +62,45 @@ const Header = () => {
       }
       <div className={styles.action_button}>
         {
-          (router.pathname === '/' || router.pathname === '/signup') &&
+          (router.pathname === '/' || router.pathname === '/forgot' || router.pathname === '/signup') &&
           <Link href="/login" className={styles.signIn} id="sign-in-button">
             <span>Sign In</span>
             <i></i>
           </Link>
         }
         {
-          (router.pathname === '/' || router.pathname === '/login') &&
+          (router.pathname === '/' || router.pathname === '/forgot' || router.pathname === '/login') &&
           <Link href="/signup" className={styles.signUp} id="sign-up-button">
             <span>Sign Up</span>
             <i></i>
           </Link>
+        }
+        {
+          (
+            router.pathname === '/home' || 
+            router.pathname === '/account' || 
+            router.pathname === '/newTravel' ||
+            router.pathname === '/newTransportation'
+            ) &&
+          <div className={styles.userProfile}>
+            <button className={styles.profileButton} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+              <FiUser className={styles.profileImage} />
+            </button>
+            {isDropdownOpen && (
+              <div className={styles.dropdown}>
+                <ul>
+                  <li onClick={redirectToAccount}>
+                    <FiUser className={styles.icon} />
+                    <p>Mon compte</p>
+                </li>
+                  <li onClick={logout}>
+                    <FiLogOut className={styles.icon} />
+                    <p>Déconnexion</p>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
         }
       </div>
     </div>
