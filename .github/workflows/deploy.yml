@@ -20,7 +20,7 @@ jobs:
 
     - name: Remove existing directory and clone new version
       run: |
-        ssh -o StrictHostKeyChecking=no etravel@13.80.156.135 "sudo rm -rf etravel && git clone git@github.com:ProximaPolaris/etravel.git"
+        ssh -o StrictHostKeyChecking=no etravel@13.80.156.135 "rm -rf etravel && git clone git@github.com:ProximaPolaris/etravel.git"
 
     - name: Execute makefile
       run: |
