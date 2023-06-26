@@ -2,8 +2,20 @@
     height: 100vh;
     width: 100%;
     font-family: Helvetica;
-  
+
     .content {
         padding-top: 90px;
+    }
+
+    .section_calendar {
+        .fc-day {
+            &.fc-other-month {
+                background-color: #333;
+            }
+
+            &.fc-day-selected {
+                background-color: #333;
+            }
+        }
     }
 }

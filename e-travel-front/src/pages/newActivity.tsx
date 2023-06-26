@@ -7,7 +7,15 @@ const NewActivityPage = () => {
             <div className={styles.container}>
                 <Header />
                 <div className={styles.content}>
+                    <div className={styles.section_calendar}>
 
+                    </div>
+                    <div className={styles.section_choix_activite}>
+
+                    </div>
+                    <div className={styles.section_calendar}>
+
+                    </div>
                 </div>
             </div>
         </>
