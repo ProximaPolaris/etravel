@@ -1,7 +1,7 @@
 export interface IUsers {
     name: string;
     surname: string;
-    birthDate: Date;
+    birthdate: Date;
     countryId: number;
     city: string;
     zipCode: string;

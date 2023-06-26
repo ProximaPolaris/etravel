@@ -13,7 +13,7 @@ const NewTravelPage = () => {
             <Header />
             <div className={styles.content}>
                 <div className={styles.section_country}>
-                    <label>Choisir votre pays de destination</label>
+                    <label>Choose your destination country</label>
                     <input type="text" />
                 </div>
                 <div className={styles.section_images_travel}>
@@ -22,7 +22,7 @@ const NewTravelPage = () => {
                             <div className={styles.img_wrapper}>
                                 <Image src={plane} alt="Logo" />
                             </div>
-                            <div className={styles.text}>Transport</div>
+                            <div className={styles.text}>Transportation</div>
                         </a>
                         <div className={styles.input_img}>
                             <input type='text' id='transport' value="choix transport"></input>
@@ -33,7 +33,7 @@ const NewTravelPage = () => {
                             <div className={styles.img_wrapper}>
                             <Image src={activity} alt="Logo" />
                             </div>
-                            <div className={styles.text}>Activité</div>
+                            <div className={styles.text}>Activities</div>
                         </a>
                         <div className={styles.input_img}>
                             <input type='text' id='activity' value="choix activité"></input>
@@ -44,7 +44,7 @@ const NewTravelPage = () => {
                             <div className={styles.img_wrapper}>
                             <Image src={lodgement} alt="Logo" />
                             </div>
-                            <div className={styles.text}>Logement</div>
+                            <div className={styles.text}>Logging</div>
                         </a>
                         <div className={styles.input_img}>
                             <input type='text' id='lodgement' value="choix logement"></input>
@@ -53,7 +53,7 @@ const NewTravelPage = () => {
                 </div>
                 <div className={styles.section_action_button}>
                     <a href='/home' className={styles.button}>Back</a>
-                    <a href='#' className={styles.button}>Ajouter mon travel</a>
+                    <a href='#' className={styles.button}>Add my travel</a>
                 </div>
 
             </div>

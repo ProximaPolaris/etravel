@@ -89,7 +89,7 @@
                     justify-content: center;
                     h2 {
                         font-size: 30px;
-                        font-weight: 900;
+                        font-weight: 500;
                         text-align: center;
                         letter-spacing: 0.1em;
                         padding: 5px 20px;
@@ -109,60 +109,66 @@
                     form {
                         display: flex;
                         justify-content: center;
+                        flex-direction: column;
+                        align-items: center;
                         width: 100%;
-                        .form_left div {
+                        .form_step1 {
                             display: flex;
-                            flex-direction: column;
-                            flex-grow: 1;
-                            padding: 0px 10px;
-                            label {
-                                font-size: 18px;
-                                font-weight: 500;
-                                margin-top: 20px;
-                                @media (max-width: 768px) {
-                                    font-size: 16px;
+                            .form_left div {
+                                display: flex;
+                                flex-direction: column;
+                                flex-grow: 1;
+                                padding: 0px 10px;
+                                label {
+                                    font-size: 18px;
+                                    font-weight: 500;
+                                    margin-top: 20px;
+                                    @media (max-width: 768px) {
+                                        font-size: 16px;
+                                    }
+                                }
+                                input[type="text"],
+                                input[type="date"],
+                                select {
+                                    padding: 10px;
+                                    border: none;
+                                    border-radius: 5px;
+                                    margin-bottom: 20px;
+                                    width: 250px;
+                                    @media (max-width: 768px) {
+                                        width: 170px;
+                                    }
                                 }
                             }
-                            input[type="text"],
-                            input[type="date"],
-                            select {
-                                padding: 10px;
-                                border: none;
-                                border-radius: 5px;
-                                margin-bottom: 20px;
-                                width: 250px;
-                                @media (max-width: 768px) {
-                                    width: 170px;
+                            .form_right div {
+                                display: flex;
+                                flex-direction: column;
+                                flex-grow: 1;
+                                padding: 0px 10px;
+                                
+                                label {
+                                    font-size: 18px;
+                                    font-weight: 500;
+                                    margin-top: 20px;
+                                    @media (max-width: 768px) {
+                                        font-size: 16px;
+                                    }
+                                }
+                                  
+                                input[type="email"],
+                                input[type="password"] {
+                                    padding: 10px;
+                                    border: none;
+                                    border-radius: 5px;
+                                    margin-bottom: 20px;
+                                    width: 250px;
+                                    @media (max-width: 768px) {
+                                        width: 170px;
+                                    }
                                 }
                             }
                         }
-                        .form_right div {
-                            display: flex;
-                            flex-direction: column;
-                            flex-grow: 1;
-                            padding: 0px 10px;
-                            
-                            label {
-                                font-size: 18px;
-                                font-weight: 500;
-                                margin-top: 20px;
-                                @media (max-width: 768px) {
-                                    font-size: 16px;
-                                }
-                            }
-                              
-                            input[type="email"],
-                            input[type="password"] {
-                                padding: 10px;
-                                border: none;
-                                border-radius: 5px;
-                                margin-bottom: 20px;
-                                width: 250px;
-                                @media (max-width: 768px) {
-                                    width: 170px;
-                                }
-                            }
-                        }
+
                         .form_all {
                             div {
                                 display: flex;

@@ -2,6 +2,7 @@ import { IUsers } from "../interface/IUsers";
 import { baseUrl } from "./config";
 
 export async function PostUser(user: IUsers) {
+    // console.log(user); 
     const userUrl = `${baseUrl}/users`;
     try {
         const response = await fetch(userUrl, {

@@ -7,6 +7,7 @@ import { IUsers } from "./interface/IUsers";
 import { PostUser } from "./api/users";
 
 const SignupPage = () => {
+
   const [step, setStep] = useState(1);
   const [userInputs, setuserInputs] = useState([
     {
@@ -99,31 +100,80 @@ const SignupPage = () => {
       });
   }, []);
 
-  const [user, setUser] = useState({
-    name: "",
-    surname: "",
-    birthDate: new Date(),
-    countryId: 1,
+  const [user, setUser] = useState<{
+    first_name: string;
+    last_name: string;
+    dob: string;
+    country: string;
+    city: string;
+    zip_code: string;
+    address: string;
+    email: string;
+    password: string;
+}>({
+    first_name: "",
+    last_name: "",
+    dob: "",
+    country: "",
     city: "",
-    zipCode: "",
+    zip_code: "",
     address: "",
     email: "",
     password: "",
-  });
+});
 
-  const handleInputChange = (
+const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+) => {
     const { name, value } = event.target;
-    setUser({ ...user, [name]: value });
-  };
 
-  const handleSubmit = (event: React.FormEvent) => {
+    if (name === 'country') {
+        setUser(prevUser => ({ ...prevUser, country: Number(value).toString() }));
+    } else if (name === 'dob') {
+        const selectedDate = new Date(value);
+        const formattedDate = selectedDate.toLocaleDateString('en-CA');
+        setUser(prevUser => ({ ...prevUser, dob: formattedDate }));
+    } else {
+        setUser(prevUser => ({ ...prevUser, [name]: value }));
+    }
+};
+
+
+  function transformUserForAPI(user: any) {
+    let transformedUser: IUsers = {
+      name: user.first_name,
+      surname: user.last_name,
+      birthdate: user.dob,
+      countryId: Number(user.country),
+      city: user.city,
+      zipCode: user.zip_code,
+      address: user.address,
+      email: user.email,
+      password: user.password
+    }
+    return transformedUser;
+}
+
+const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    PostUser(user)
-      .then((data: any) => console.log(data))
-      .catch((error: any) => console.error("Error posting user:", error));
+    // console.log(user);
+    const userForAPI = transformUserForAPI(user);
+    PostUser(userForAPI)
+      // .then((response: Response) => {
+      //   // if (!response.ok) {
+      //   //   throw new Error(`HTTP error! status: ${response.status}`);
+      //   // }
+      //   return response.json();
+      // })
+      .then((data: any) => {
+        // console.log(data);
+        window.location.href = "/login";
+      })
+      // .catch((error: any) => {
+      //   console.error('Error posting user:', error);
+      // });
   };
+  
 
   // function to handle "next" button click
   const handleNext = () => {
@@ -147,59 +197,62 @@ const SignupPage = () => {
               </div>
               <div className={styles.form_content}>
                 <form onSubmit={handleSubmit}>
-                  {step === 1 && (
-                    <div className={styles.form_left}>
-                      {userInputs.map((input, index) => (
-                        <div key={index}>
-                          <label htmlFor={input.name}>{input.label}</label>
-                          {input.type === "select" && input.options ? (
-                            <select
-                              id={input.name}
-                              name={input.name}
-                              required={input.required}
-                              onChange={handleInputChange}
-                            >
-                              {input.options.map((option) => (
-                                <option
-                                  key={option.id}
-                                  id={option.id}
-                                  value={option.value}
-                                >
-                                  {option.label}
-                                </option>
-                              ))}
-                            </select>
-                          ) : (
-                            <input
-                              type={input.type}
-                              id={input.name}
-                              name={input.name}
-                              required={input.required}
-                              onChange={handleInputChange}
-                            />
-                          )}
-                        </div>
-                      ))}
+                    <div className={styles.form_step1}>
+                        {step === 1 && (
+                            <div className={styles.form_left}>
+                                {userInputs.map((input, index) => (
+                                    <div key={index}>
+                                        <label htmlFor={input.name}>{input.label}</label>
+                                        {input.type === "select" && input.options ? (
+                                            <select
+                                                id={input.name}
+                                                name={input.name}
+                                                required={input.required}
+                                                onChange={handleInputChange}
+                                            >
+                                            {input.options.map((option) => (
+                                                <option
+                                                    key={option.id}
+                                                    id={option.id}
+                                                    value={option.value}
+                                                >
+                                                    {option.label}
+                                                </option>
+                                            ))}
+                                            </select>
+                                        ) : (
+                                            <input
+                                            type={input.type}
+                                            id={input.name}
+                                            name={input.name}
+                                            required={input.required}
+                                            onChange={handleInputChange}
+                                            />
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                        {step === 1 && (
+                            <div className={styles.form_right}>
+                            {accountInputs.map((input, index) => (
+                                <div key={index}>
+                                <label htmlFor={input.name}>{input.label}</label>
+                                <input
+                                    type={input.type}
+                                    id={input.name}
+                                    name={input.name}
+                                    required={input.required}
+                                    onChange={handleInputChange}
+                                />
+                                </div>
+                            ))}
+                            </div>
+                        )}
                     </div>
-                  )}
-                  {step === 1 && (
-                    <div className={styles.form_right}>
-                      {accountInputs.map((input, index) => (
-                        <div key={index}>
-                          <label htmlFor={input.name}>{input.label}</label>
-                          <input
-                            type={input.type}
-                            id={input.name}
-                            name={input.name}
-                            required={input.required}
-                            onChange={handleInputChange}
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  {step === 2 && (
-                    <div className={styles.form_all}>
+
+                    {step === 2 && (
+                        <div className={styles.form_all}>
                         {addressInputs.map((input, index) => (
                             <div key={index}>
                             <label htmlFor={input.name}>{input.label}</label>
@@ -228,21 +281,21 @@ const SignupPage = () => {
                                 ))}
                             </select>
                         </div>
+                        </div>
+                    )}
+                    <div className={styles.form_button}>
+                        {step === 1 ? (
+                        <div>
+                            <button onClick={handleNext}>Next</button>
+                        </div>
+                        ) : (
+                        <div>
+                            <button onClick={handlePrev}>Back</button>
+                            {step === 2 && <input type="submit" value="Submit" />}
+                        </div>
+                        )}
                     </div>
-                  )}
                 </form>
-              </div>
-              <div className={styles.form_button}>
-                {step === 1 ? (
-                  <div>
-                    <button onClick={handleNext}>Suivant</button>
-                  </div>
-                ) : (
-                  <div>
-                    <button onClick={handlePrev}>Précedent</button>
-                    {step === 2 && <input type="submit" value="Terminer" />}
-                  </div>
-                )}
               </div>
             </div>
           </div>

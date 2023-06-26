@@ -66,20 +66,18 @@ const IndexPage = () => {
           <div className={styles.about}>
             <h1>About E-Travel</h1>
             <span>
-              E-Travel vous facilite la planification de votre voyage en vous proposant un système intégré de visualisation pour
-              les billets d'avion, le logement et les activités, avec des comparateurs de prix pour les vols et le logement pour
-              économiser de l'argent. 
+              E-Travel makes it easy for you to plan your trip with an integrated viewing system for for flights, 
+              accommodation and activities, with price comparisons for flights and accommodation to save you to save you money. 
               <br />
-              Vous pouvez planifier votre voyage de A à Z avec une prévisualisation d'itinéraire disponible
-              en cas de défaut d'internet.
-              <br />
-              <br />
-              Le public visé par E-Travel est constitué de voyageurs soucieux de planifier leur voyage de manière efficace et économique,
-              en utilisant un système intégré pour la réservation de billets d'avion, la réservation d'hébergement et la recherche
-              d'activités touristiques.
+              You can plan your trip from A to Z, with an itinerary preview available
+              in case of internet failure.
               <br />
               <br />
-              E-Travel est développé par une équipe passionnée par les voyages et les technologies de l'information.
+              E-Travel's target audience is travelers who want to plan their trips efficiently and economically,
+              using an integrated system for booking flights, accommodations and tourist activities.
+              <br />
+              <br />
+              E-Travel is developed by a team passionate about travel and information technology.
             </span>
           </div>
           <div className={styles.img}>
@@ -103,7 +101,7 @@ const IndexPage = () => {
                 <Image className={styles.cardImage} src={thomas} alt='thomas' />
                 <div>
                   <h3>DE SOUSA Thomas</h3>
-                  <p>Developpeur Full Stack Spec DevOps</p>
+                  <p>Full Stack Developer Spec DevOps</p>
                 </div>
                 <div className={styles.socialButtons}>
                   <a href="https://github.com/TomaRouki" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
@@ -123,7 +121,7 @@ const IndexPage = () => {
                 <Image className={styles.cardImage} src={lucien} alt='lucien' />
                 <div>
                   <h3>BESNIER Lucien</h3>
-                  <p>Developpeur Full Stack</p>
+                  <p>Full Stack Developer</p>
                 </div>
                 <div className={styles.socialButtons}>
                   <a href="#" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
@@ -143,7 +141,7 @@ const IndexPage = () => {
                 <Image className={styles.cardImage} src={kilian} alt='kilian' />
                 <div>
                   <h3>MEVREL Kilian</h3>
-                  <p>Developpeur Full Stack Javascript Spec Front | Project Leader </p>
+                  <p>Full Stack Developer Spec Front | Project Leader </p>
                 </div>
                 <div className={styles.socialButtons}>
                   <a href="https://github.com/Redcroow" className={styles.socialButton} target="_blank" rel="noopener noreferrer">

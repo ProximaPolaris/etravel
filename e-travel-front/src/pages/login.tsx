@@ -27,7 +27,7 @@ const LoginPage = () => {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                 />
-                <span>Username</span>
+                <span>Email</span>
                 <i></i>
               </div>
               <div className={styles.inputCard}>
@@ -48,6 +48,7 @@ const LoginPage = () => {
                 type="submit"
                 className={styles.buttonCard}
                 onClick={handleSubmit}
+                value="Submit"
               />
             </div>
           </div>
