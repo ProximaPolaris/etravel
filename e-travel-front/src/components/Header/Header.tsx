@@ -30,7 +30,8 @@ const Header = () => {
           router.pathname === '/home' || 
           router.pathname === '/account' || 
           router.pathname === '/newTravel' ||
-          router.pathname === '/newTransportation'
+          router.pathname === '/newTransportation' ||
+          router.pathname === '/newActivity'
         )&& 
         <div className={styles.textIndex}>
           <h1>
@@ -80,7 +81,8 @@ const Header = () => {
             router.pathname === '/home' || 
             router.pathname === '/account' || 
             router.pathname === '/newTravel' ||
-            router.pathname === '/newTransportation'
+            router.pathname === '/newTransportation' ||
+            router.pathname === '/newActivity'
             ) &&
           <div className={styles.userProfile}>
             <button className={styles.profileButton} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>

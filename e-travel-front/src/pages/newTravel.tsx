@@ -29,7 +29,7 @@ const NewTravelPage = () => {
                         </div>
                     </div>
                     <div className={styles.image_container}>
-                        <a href="#" className={styles.img_link}>
+                        <a href="/newActivity" className={styles.img_link}>
                             <div className={styles.img_wrapper}>
                             <Image src={activity} alt="Logo" />
                             </div>
