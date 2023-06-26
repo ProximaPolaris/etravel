@@ -13,10 +13,10 @@ endif
 	cd $(BACK_DIR) && npm i
 
 build:
-	$(DOCKER_COMPOSE) build
+	sudo $(DOCKER_COMPOSE) build
 
 up:
-	$(DOCKER_COMPOSE) up
+	sudo $(DOCKER_COMPOSE) up
 
 run-metabase:
 	@docker run -d -p 6969:3000 --name metabase metabase/metabase
