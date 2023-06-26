@@ -26,7 +26,7 @@ const HomePage = () => {
         <div className={styles.content}>
           <div className={styles.section_action_button}>
             <Link href="/newTravel" id="newtravel-button">
-              <button>Nouveau Travel</button>
+              <button>New Travel</button>
             </Link>
             <button>
               <FaTrash />
@@ -34,19 +34,19 @@ const HomePage = () => {
           </div>
           <div className={styles.section_travel}>
             <div className={styles.title}>
-              <h1>Mes Travels</h1>
+              <h1>My Travels</h1>
             </div>
             <div
               className={`${styles.card} ${expandedCard && expandedCard.id === '1' ? styles.expanded : ''}`}
               id='1'
-              onClick={() => handleCardClick('1', 'Description de la carte 1')}
+              onClick={() => handleCardClick('1', 'Description of the first card 1')}
             >
                 <div className=''>
                     <div className={styles.info}>
                         <p>Date</p>
                     </div>
                     <div className={styles.info}>
-                        <p>Pays</p>
+                        <p>Country</p>
                     </div>
                     <div className={styles.info}>
                         <p>Information 1</p>
@@ -68,13 +68,45 @@ const HomePage = () => {
                 </div>
               )}
             </div>
+            <div
+              className={`${styles.card} ${expandedCard && expandedCard.id === '2' ? styles.expanded : ''}`}
+              id='2'
+              onClick={() => handleCardClick('2', 'Description of the second card 2')}
+            >
+                <div className=''>
+                    <div className={styles.info}>
+                        <p>Date</p>
+                    </div>
+                    <div className={styles.info}>
+                        <p>Country</p>
+                    </div>
+                    <div className={styles.info}>
+                        <p>Information 1</p>
+                    </div>
+                    <div className={`${styles.info} ${styles.information2}`}>
+                        <p>Information 2</p>
+                    </div>
+                    <div className={styles.button}>
+                        <button>
+                        <RiPencilLine size={27} />
+                        </button>
+                    </div>
+                </div>
+              {expandedCard && expandedCard.id === '2' && (
+                <div>
+                    <div className={styles.description}>
+                        <p>{expandedCard.description}</p>
+                    </div>
+                </div>
+              )}
+            </div>
             <div className={styles.title}>
-              <h1>Mes anciens Travels</h1>
+              <h1>My old Travels</h1>
             </div>
             <div
               className={`${styles.card} ${expandedCard && expandedCard.id === '3' ? styles.expanded : ''}`}
               id='3'
-              onClick={() => handleCardClick('3', 'Description de la carte 3')}
+              onClick={() => handleCardClick('3', 'Description of the third card 3')}
             >
               <div className={styles.info}>
                 <p>Date</p>

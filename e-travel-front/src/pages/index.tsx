@@ -96,14 +96,14 @@ const IndexPage = () => {
           </Slider>
         </div>
         <div className={styles.section_dev}>
-          <h1>Notre équipe</h1>
+          <h1>Our Team</h1>
           <div className={styles.team}>
             <div className={styles.card}>
               <div className={styles.cardContent}>
                 <Image className={styles.cardImage} src={thomas} alt='thomas' />
                 <div>
                   <h3>DE SOUSA Thomas</h3>
-                  <p>Développeur Full Stack Spec Back</p>
+                  <p>Developpeur Full Stack Spec DevOps</p>
                 </div>
                 <div className={styles.socialButtons}>
                   <a href="https://github.com/TomaRouki" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
@@ -123,7 +123,7 @@ const IndexPage = () => {
                 <Image className={styles.cardImage} src={lucien} alt='lucien' />
                 <div>
                   <h3>BESNIER Lucien</h3>
-                  <p>Développeur Full Stack</p>
+                  <p>Developpeur Full Stack</p>
                 </div>
                 <div className={styles.socialButtons}>
                   <a href="#" className={styles.socialButton} target="_blank" rel="noopener noreferrer">
@@ -143,7 +143,7 @@ const IndexPage = () => {
                 <Image className={styles.cardImage} src={kilian} alt='kilian' />
                 <div>
                   <h3>MEVREL Kilian</h3>
-                  <p>Développeur Full Stack Javascript Spec Front | Chef de projet</p>
+                  <p>Developpeur Full Stack Javascript Spec Front | Project Leader </p>
                 </div>
                 <div className={styles.socialButtons}>
                   <a href="https://github.com/Redcroow" className={styles.socialButton} target="_blank" rel="noopener noreferrer">

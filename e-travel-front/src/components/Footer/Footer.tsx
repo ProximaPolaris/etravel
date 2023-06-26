@@ -23,7 +23,7 @@ const Footer = () => {
                             <h4>Support</h4>
                             <ul>
                                 <li>
-                                    <a target="_blank" href="#" rel="noopener">Term et condition</a>
+                                    <a target="_blank" href="#" rel="noopener">Terms and conditions</a>
                                 </li>
                                 <li>
                                     <a target="_blank" href="#" rel="noopener">Legal information</a>

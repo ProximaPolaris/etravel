@@ -93,11 +93,11 @@ const Header = () => {
                 <ul>
                   <li onClick={redirectToAccount}>
                     <FiUser className={styles.icon} />
-                    <p>Mon compte</p>
+                    <p>Account</p>
                 </li>
                   <li onClick={logout}>
                     <FiLogOut className={styles.icon} />
-                    <p>Déconnexion</p>
+                    <p>Sign out</p>
                   </li>
                 </ul>
               </div>
