@@ -7,12 +7,7 @@ const SignupPage = () => {
     const [userInputs, setuserInputs] = useState([
         { label: 'First Name', type: 'text', name: 'first_name', id: 'first_name', required: true },
         { label: 'Last Name', type: 'text', name: 'last_name', id: 'last_name', required: true },
-        { label: 'Date of Birth', type: 'date', name: 'dob', id: 'dob', required: true },
-        { label: 'Gender', type: 'select', name: 'gender', id: 'gender', required: true, options: [
-            { value: '', label: '--Please choose an option--', id: 'gender_default' },
-            { value: 'male', label: 'Male', id: 'gender_male' },
-            { value: 'female', label: 'Female', id: 'gender_female' },
-        ]}
+        { label: 'Date of Birth', type: 'date', name: 'dob', id: 'dob', required: true }
     ]);
     const [accountInputs, setAccountInputs] = useState([
         { label: 'Email', type: 'email', name: 'email', id: 'email', required: true },
