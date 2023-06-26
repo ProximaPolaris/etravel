@@ -18,8 +18,8 @@ build:
 up:
 	$(DOCKER_COMPOSE) up
 
-run-metabase:
-	@docker run -d -p 6969:3000 --name metabase metabase/metabase
+# run-metabase:
+# 	@docker run -d -p 6969:3000 --name metabase metabase/metabase
 
 down:
 	$(DOCKER_COMPOSE) down
