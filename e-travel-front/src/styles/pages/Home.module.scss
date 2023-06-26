@@ -70,6 +70,11 @@
         }
       }
       
+      .card.expanded {
+        height: 200px; // Par exemple, ajustez la hauteur agrandie selon vos besoins
+        // Ajoutez d'autres styles pour agrandir la carte
+      }
+      
       .card {
         margin-bottom: 20px;
         border: 1px solid #ddd;
