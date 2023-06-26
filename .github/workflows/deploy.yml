@@ -1,0 +1,27 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install SSH key
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Remove existing directory and clone new version
+      run: |
+        ssh -o StrictHostKeyChecking=no etravel@13.80.156.135 "rm -rf etravel && git clone https://github.com/ProximaPolaris/etravel.git"
+
+    - name: Execute makefile
+      run: |
+        ssh -o StrictHostKeyChecking=no etravel@13.80.156.135 "cd etravel && make all"
