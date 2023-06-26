@@ -8,8 +8,9 @@ ifeq ($(OS),Windows_NT)
 else
 	@if [ -d "$(FRONT_DIR)/.next" ]; then rm -rf $(FRONT_DIR)/.next; fi
 endif
-	cd $(FRONT_DIR) && npm i && npm run build
-	cd $(BACK_DIR) && npm i && npm run build
+	npm i
+	cd $(FRONT_DIR) && npm i 
+	cd $(BACK_DIR) && npm i
 
 build:
 	$(DOCKER_COMPOSE) build
