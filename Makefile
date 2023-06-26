@@ -1,6 +1,7 @@
 DOCKER_COMPOSE = docker-compose
 FRONT_DIR = e-travel-front
 BACK_DIR = e-travel-back
+NGINX_CONF_FILE = /etc/nginx/sites-available/etravel.click
 
 install:
 ifeq ($(OS),Windows_NT)
@@ -35,5 +36,18 @@ kiki:
 	git add .; \
 	git commit -m "feat: $${message}"; \
 	git push;
+
+nginx:
+	@echo "server {" > $(NGINX_CONF_FILE)
+	@echo "    listen 80;" >> $(NGINX_CONF_FILE)
+	@echo "    listen [::]:80;" >> $(NGINX_CONF_FILE)
+	@echo "    server_name etravel.click;" >> $(NGINX_CONF_FILE)
+	@echo "" >> $(NGINX_CONF_FILE)
+	@echo "    location / {" >> $(NGINX_CONF_FILE)
+	@echo "        proxy_pass http://13.80.156.135:3000/;" >> $(NGINX_CONF_FILE)
+	@echo "        proxy_set_header Host $$host;" >> $(NGINX_CONF_FILE)
+	@echo "        proxy_set_header X-Real-IP $$remote_addr;" >> $(NGINX_CONF_FILE)
+	@echo "    }" >> $(NGINX_CONF_FILE)
+	@echo "}" >> $(NGINX_CONF_FILE)
 
 all: install up

@@ -18,7 +18,18 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Remove existing directory and clone new version
+    - name: Update system and install Nginx
       run: |
-        ssh -o StrictHostKeyChecking=no etravel@13.80.156.135 "cd etravel && sudo docker compose down && cd .. && sudo rm -rf etravel && git clone git@github.com:ProximaPolaris/etravel.git && cd etravel && npm i && cd e-travel-back && npm i && cd .. && cd e-travel-front && npm i && cd .. && sudo docker compose up -d"
+        ssh -o StrictHostKeyChecking=no etravel@13.80.156.135 "cd etravel && sudo apt-get update && sudo apt-get install nginx"
 
+    - name: Enable Nginx site
+      run: |
+        ssh -o StrictHostKeyChecking=no etravel@13.80.156.135 "cd etravel && sudo ln -s /etc/nginx/sites-available/etravel.click /etc/nginx/sites-enabled/ && make nginx"
+
+    - name: Test Nginx configuration
+      run: |
+        ssh -o StrictHostKeyChecking=no etravel@13.80.156.135 "sudo nginx -t"
+
+    - name: Restart Nginx
+      run: |
+        ssh -o StrictHostKeyChecking=no etravel@13.80.156.135 "sudo service nginx restart"
