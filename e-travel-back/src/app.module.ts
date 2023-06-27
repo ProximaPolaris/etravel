@@ -21,6 +21,7 @@ import { TravelsModule } from './api/travels/travels.module';
 import { Travel } from './api/travels/entities/travel.entity';
 import { TypeActivitiesModule } from './api/type-activities/type-activities.module';
 import { TypeActivity } from './api/type-activities/entities/type-activity.entity';
+import { AuthModule } from './api/auth/auth.module';
 
 @Module({
   imports: [
@@ -60,6 +61,7 @@ import { TypeActivity } from './api/type-activities/entities/type-activity.entit
     LodgingsModule,
     TravelsModule,
     TypeActivitiesModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
