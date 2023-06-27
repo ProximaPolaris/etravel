@@ -15,18 +15,18 @@ const NewTransportationPage = () => {
                 <span></span>
                 <div className={styles.card}>
                     <div className={styles.title}>
-                        <h2>Renseignement</h2>
+                        <h2>Information</h2>
                     </div>
                         <div className={styles.section_date}>
                             <div className={styles.date}>
-                                <label>Date de début</label>
+                                <label>Start Date</label>
                                 <div className={styles.input_date}>
                                     <input type="date" />
                                     <FaCalendar size={20} />
                                 </div>
                             </div>
                             <div className={styles.date}>
-                                <label>Date de fin</label>
+                                <label>End Date</label>
                                 <div className={styles.input_date}>
                                     <input type="date" />
                                     <FaCalendar size={20} />
@@ -35,19 +35,19 @@ const NewTransportationPage = () => {
                         </div>
                         <div className={styles.section_input}>
                             <div className={styles.input}>
-                                <label>Ville</label>
+                                <label>City</label>
                                 <select>
-                                    <option value="">Select ville</option>
+                                    <option value="">Select City</option>
                                     {/* Add your ville options here */}
                                 </select>
                             </div>
                             <div className={styles.input}>
-                                <label>Nombre de personne</label>
+                                <label>Number of people</label>
                                 <input type="number" min="1" />
                             </div>
                         </div>
                         <div className={styles.section_button}>
-                            <button>Enregistrer</button>
+                            <button>Register</button>
                         </div>
                     </div>
                 </div>

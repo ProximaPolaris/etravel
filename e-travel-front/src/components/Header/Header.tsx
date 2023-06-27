@@ -9,9 +9,11 @@ import { FiUser, FiLogOut } from 'react-icons/fi';
 const Header = () => {
   const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const redirectToAccount = () => {
     router.push('/account');
   };
+
   const logout = () => {
     router.push('/logout');
   };
@@ -19,20 +21,22 @@ const Header = () => {
   return (
     <div className={styles.container}>
       <div>
+        {/* Logo de l'application */}
         <a href="/">
           <Image className={styles.logo} src={logo} alt="Logo" />
         </a>
       </div>
-      {
-        (
-          router.pathname === '/' || 
-          router.pathname === '/signup' || 
-          router.pathname === '/home' || 
-          router.pathname === '/account' || 
-          router.pathname === '/newTravel' ||
-          router.pathname === '/newTransportation' ||
-          router.pathname === '/newActivity'
-        )&& 
+      
+      {/* Affichage du titre pour certaines routes */}
+      {(
+        router.pathname === '/' || 
+        router.pathname === '/signup' || 
+        router.pathname === '/home' || 
+        router.pathname === '/account' || 
+        router.pathname === '/newTravel' ||
+        router.pathname === '/newTransportation' ||
+        router.pathname === '/newActivity'
+      ) && (
         <div className={styles.textIndex}>
           <h1>
             <span>E</span>
@@ -45,9 +49,10 @@ const Header = () => {
             <span>l</span>
           </h1>
         </div>
-      }
-      {
-        (router.pathname === '/login'|| router.pathname === '/forgot') &&
+      )}
+      
+      {/* Affichage du titre pour les routes de connexion */}
+      {(router.pathname === '/login'|| router.pathname === '/forgot') && (
         <div className={styles.text}>
           <h1>
             <span>E</span>
@@ -60,50 +65,56 @@ const Header = () => {
             <span>l</span>
           </h1>
         </div>
-      }
+      )}
+      
       <div className={styles.action_button}>
-        {
-          (router.pathname === '/' || router.pathname === '/forgot' || router.pathname === '/signup') &&
+        {/* Bouton "Sign In" pour certaines routes */}
+        {(router.pathname === '/' || router.pathname === '/forgot' || router.pathname === '/signup') && (
           <Link href="/login" className={styles.signIn} id="sign-in-button">
             <span>Sign In</span>
             <i></i>
           </Link>
-        }
-        {
-          (router.pathname === '/' || router.pathname === '/forgot' || router.pathname === '/login') &&
+        )}
+        
+        {/* Bouton "Sign Up" pour certaines routes */}
+        {(router.pathname === '/' || router.pathname === '/forgot' || router.pathname === '/login') && (
           <Link href="/signup" className={styles.signUp} id="sign-up-button">
             <span>Sign Up</span>
             <i></i>
           </Link>
-        }
-        {
-          (
-            router.pathname === '/home' || 
-            router.pathname === '/account' || 
-            router.pathname === '/newTravel' ||
-            router.pathname === '/newTransportation' ||
-            router.pathname === '/newActivity'
-            ) &&
+        )}
+        
+        {/* Profil utilisateur pour certaines routes */}
+        {(
+          router.pathname === '/home' || 
+          router.pathname === '/account' || 
+          router.pathname === '/newTravel' ||
+          router.pathname === '/newTransportation' ||
+          router.pathname === '/newActivity'
+        ) && (
           <div className={styles.userProfile}>
             <button className={styles.profileButton} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+              {/* Icône de profil utilisateur */}
               <FiUser className={styles.profileImage} />
             </button>
             {isDropdownOpen && (
               <div className={styles.dropdown}>
                 <ul>
+                  {/* Option "Account" du menu déroulant */}
                   <li onClick={redirectToAccount}>
                     <FiUser className={styles.icon} />
-                    <p>Mon compte</p>
-                </li>
+                    <p>Account</p>
+                  </li>
+                  {/* Option "Sign out" du menu déroulant */}
                   <li onClick={logout}>
                     <FiLogOut className={styles.icon} />
-                    <p>Déconnexion</p>
+                    <p>Sign out</p>
                   </li>
                 </ul>
               </div>
             )}
           </div>
-        }
+        )}
       </div>
     </div>
   );

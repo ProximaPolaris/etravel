@@ -19,36 +19,39 @@ const LoginPage = () => {
           <Header />
           <div className={styles.card}>
             <div className={styles.form}>
-              <h2>Sign in</h2>
-              <div className={styles.inputCard}>
+              <form>
+                <h2>Sign in</h2>
+                <div className={styles.inputCard}>
+                  <input
+                    type="text"
+                    required
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                  />
+                  <span>Email</span>
+                  <i></i>
+                </div>
+                <div className={styles.inputCard}>
+                  <input
+                    type="password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <span>Password</span>
+                  <i></i>
+                </div>
+                <div className={styles.linksCard}>
+                  <a href="forgot">Forgot Password</a>
+                  <a href="signup">Sign Up</a>
+                </div>
                 <input
-                  type="text"
-                  required
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  type="submit"
+                  className={styles.buttonCard}
+                  onClick={handleSubmit}
+                  value="Submit"
                 />
-                <span>Username</span>
-                <i></i>
-              </div>
-              <div className={styles.inputCard}>
-                <input
-                  type="password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <span>Password</span>
-                <i></i>
-              </div>
-              <div className={styles.linksCard}>
-                <a href="forgot">Forgot Password</a>
-                <a href="signup">Sign Up</a>
-              </div>
-              <input
-                type="submit"
-                className={styles.buttonCard}
-                onClick={handleSubmit}
-              />
+              </form>
             </div>
           </div>
           <div className={styles.action_button}>

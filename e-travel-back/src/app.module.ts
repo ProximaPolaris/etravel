@@ -7,20 +7,21 @@ import { UsersModule } from './api/users/users.module';
 import { User } from './api/users/entities/user.entity';
 import { CountriesModule } from './api/countries/countries.module';
 import { Country } from './api/countries/entities/country.entity';
-import { Activity } from './api/activities/entities/activity.entity';
 import { ActivitiesModule } from './api/activities/activities.module';
-import { Calendar } from './api/calendars/entities/calendar.entity';
+import { Activity } from './api/activities/entities/activity.entity';
 import { CalendarsModule } from './api/calendars/calendars.module';
-import { Continent } from './api/continents/entities/continent.entity';
+import { Calendar } from './api/calendars/entities/calendar.entity';
 import { ContinentsModule } from './api/continents/continents.module';
-import { Destination } from './api/destinations/entities/destination.entity';
+import { Continent } from './api/continents/entities/continent.entity';
 import { DestinationsModule } from './api/destinations/destinations.module';
-import { Lodging } from './api/lodgings/entities/lodging.entity';
+import { Destination } from './api/destinations/entities/destination.entity';
 import { LodgingsModule } from './api/lodgings/lodgings.module';
-import { Travel } from './api/travels/entities/travel.entity';
+import { Lodging } from './api/lodgings/entities/lodging.entity';
 import { TravelsModule } from './api/travels/travels.module';
-import { TypeActivity } from './api/type-activities/entities/type-activity.entity';
+import { Travel } from './api/travels/entities/travel.entity';
 import { TypeActivitiesModule } from './api/type-activities/type-activities.module';
+import { TypeActivity } from './api/type-activities/entities/type-activity.entity';
+import { AuthModule } from './api/auth/auth.module';
 
 @Module({
   imports: [
@@ -60,6 +61,7 @@ import { TypeActivitiesModule } from './api/type-activities/type-activities.modu
     LodgingsModule,
     TravelsModule,
     TypeActivitiesModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

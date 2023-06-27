@@ -31,14 +31,13 @@ const ForgotPage = () => {
           </div>
         </div>
         <div className={styles.right_part}>
-          <h1>Le saviez-vous ?</h1>
+          <h1>Did you know ?</h1>
           <span>
-            Marco Polo, le premier explorateur née au 13e siècle, 
-            a vécu une incroyable aventure en Asie, découvrant des palais, 
-            rencontrant des empereurs et rapportant des récits de dragons 
-            et de merveilles exotiques. <br />
-            Son voyage légendaire continue de nous inspirer à explorer le monde et à nourrir 
-            notre imagination. <br/>
+            Marco Polo, the first explorer born in the 13th century,
+            embarked upon an extraordinary adventure in Asia, 
+            where he discovered palaces, encountered emperors, 
+            and brought back tales of dragons and exotic wonders. <br />
+            His legendary journey continues to inspire us to explore the world and fuel our imagination. <br/>
           </span>
         </div>
       </div>

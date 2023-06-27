@@ -31,42 +31,42 @@ const AccountPage = () => {
           </div>
           <div className={styles.formWrapper}>
             <div className={styles.title}>
-              <h1>Information du compte</h1>
+              <h1>Account Information</h1>
             </div>
             <form className={styles.form}>
               <div className={styles.leftForm}>
                 <div className={styles.formField}>
-                  <label>Nom</label>
+                  <label>Last Name</label>
                   <input type='text' defaultValue="test" disabled={!isEditable} />
                 </div>
                 <div className={styles.formField}>
-                  <label>Prenom</label>
+                  <label>First Name</label>
                   <input type='text' defaultValue="test" disabled={!isEditable} />
                 </div>
                 <div className={styles.formField}>
-                  <label>Date de naissance</label>
+                  <label>Birth Date</label>
                   <input type='date' disabled={!isEditable} />
                 </div>
                 <div className={styles.formField}>
-                  <label>Sexe</label>
+                  <label>Gender</label>
                   <input type='text' defaultValue="test" disabled={!isEditable} />
                 </div>
               </div>
               <div className={styles.rightForm}>
                 <div className={styles.formField}>
-                  <label>Adresse</label>
+                  <label>Adress</label>
                   <input type='text' defaultValue="test" disabled={!isEditable} />
                 </div>
                 <div className={styles.formField}>
-                  <label>Code Postal</label>
+                  <label>Zip Code</label>
                   <input type='text' defaultValue="test" disabled={!isEditable} />
                 </div>
                 <div className={styles.formField}>
-                  <label>Ville</label>
+                  <label>City</label>
                   <input type='text' defaultValue="test" disabled={!isEditable} />
                 </div>
                 <div className={styles.formField}>
-                  <label>Pays</label>
+                  <label>Country</label>
                   <input type='text' defaultValue="test" disabled={!isEditable} />
                 </div>
                 <div className={styles.formField}>
@@ -83,7 +83,7 @@ const AccountPage = () => {
                 className={styles.modifyButton}
                 onClick={isEditable ? handleSaveClick : handleModifyClick}
               >
-                {isEditable ? 'Enregistrer' : 'Modifier'}
+                {isEditable ? 'Save' : 'Update'}
               </button>
             </div>
           </div>
